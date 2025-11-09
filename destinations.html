@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our destinations - from Himalayan peaks to tropical islands, discover amazing places around the world with Adventure Tourism.">
+    <title>Destinations - Adventure Tourism</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <nav class="container">
+            <div class="nav">
+                <a href="index.html" class="nav__logo">Adventure Tourism</a>
+                <ul class="nav__menu">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li><a href="destinations.html" class="nav__link nav__link--active">Destinations</a></li>
+                    <li><a href="tours.html" class="nav__link">Tours</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+                    <li><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+                <button class="nav__toggle" aria-label="Toggle navigation menu">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">Explore Amazing Destinations</h1>
+                <p class="hero__subtitle">Discover breathtaking locations across the globe, from majestic mountains to pristine beaches</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="filters">
+                    <button class="filter filter--active" data-filter="all">All Destinations</button>
+                    <button class="filter" data-filter="mountains">Mountains</button>
+                    <button class="filter" data-filter="beaches">Beaches</button>
+                    <button class="filter" data-filter="cities">Cities</button>
+                    <button class="filter" data-filter="wildlife">Wildlife</button>
+                    <button class="filter" data-filter="adventure">Adventure</button>
+                </div>
+
+                <div class="grid grid--3">
+                    <article class="card" data-category="mountains adventure">
+                        <img src="https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Traditional temple architecture in Kathmandu with mountains in background" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Kathmandu, Nepal</h3>
+                            <div class="card__meta">
+                                <span>🏔️ Mountains</span>
+                                <span>🏛️ Cultural</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                            <p class="card__description">Experience the heart of Nepalese culture in Kathmandu, gateway to the Himalayas. Ancient temples, bustling markets, and mountain vistas.</p>
+                            <a href="destination-kathmandu.html" class="btn btn--primary">Explore Kathmandu</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="beaches">
+                        <img src="https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Crystal clear turquoise water with traditional longtail boats in Thailand" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Phi Phi Islands, Thailand</h3>
+                            <div class="card__meta">
+                                <span>🏝️ Islands</span>
+                                <span>🏊‍♀️ Beaches</span>
+                                <span>⭐ 4.8</span>
+                            </div>
+                            <p class="card__description">Paradise found in Thailand's most beautiful archipelago. Crystal-clear waters, limestone cliffs, and pristine beaches await.</p>
+                            <a href="tours.html" class="btn btn--primary">View Tours</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="mountains adventure">
+                        <img src="https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Dramatic granite peaks and pristine lake in Patagonia" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Patagonia, Chile</h3>
+                            <div class="card__meta">
+                                <span>🏔️ Mountains</span>
+                                <span>🥾 Trekking</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                            <p class="card__description">Witness some of the world's most dramatic landscapes in Patagonia. Towering peaks, ancient glaciers, and endless wilderness.</p>
+                            <a href="tours.html" class="btn btn--primary">View Tours</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="wildlife adventure">
+                        <img src="https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Safari vehicle in African savanna with acacia trees" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Masai Mara, Kenya</h3>
+                            <div class="card__meta">
+                                <span>🦁 Wildlife</span>
+                                <span>📷 Safari</span>
+                                <span>⭐ 4.8</span>
+                            </div>
+                            <p class="card__description">Witness the Great Migration and encounter Africa's Big Five in one of the world's most renowned wildlife reserves.</p>
+                            <a href="tours.html" class="btn btn--primary">View Tours</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="mountains adventure">
+                        <img src="https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Northern lights aurora borealis over snowy landscape" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Reykjavik, Iceland</h3>
+                            <div class="card__meta">
+                                <span>❄️ Arctic</span>
+                                <span>🌌 Northern Lights</span>
+                                <span>⭐ 4.7</span>
+                            </div>
+                            <p class="card__description">Land of fire and ice offering spectacular northern lights, geysers, waterfalls, and unique volcanic landscapes.</p>
+                            <a href="tours.html" class="btn btn--primary">View Tours</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="cities">
+                        <img src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Traditional Japanese temple with pagoda surrounded by cherry blossoms" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Kyoto, Japan</h3>
+                            <div class="card__meta">
+                                <span>🏛️ Cultural</span>
+                                <span>🌸 Heritage</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                            <p class="card__description">Step into ancient Japan with thousands of temples, traditional ryokans, and stunning seasonal landscapes in the former imperial capital.</p>
+                            <a href="tours.html" class="btn btn--primary">View Tours</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="beaches">
+                        <img src="https://images.pexels.com/photos/3571551/pexels-photo-3571551.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Dramatic coastline with turquoise lagoons and coral atolls" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Maldives</h3>
+                            <div class="card__meta">
+                                <span>🏝️ Islands</span>
+                                <span>🤿 Diving</span>
+                                <span>⭐ 4.8</span>
+                            </div>
+                            <p class="card__description">Luxury tropical paradise with overwater bungalows, pristine coral reefs, and some of the world's most beautiful beaches.</p>
+                            <a href="tours.html" class="btn btn--primary">View Tours</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="mountains adventure">
+                        <img src="https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Snow-capped Alpine peaks reflected in pristine mountain lake" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Swiss Alps, Switzerland</h3>
+                            <div class="card__meta">
+                                <span>🏔️ Mountains</span>
+                                <span>⛷️ Alpine</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                            <p class="card__description">Experience the majesty of the Alps with pristine peaks, charming villages, and world-class outdoor adventures.</p>
+                            <a href="tours.html" class="btn btn--primary">View Tours</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="wildlife adventure">
+                        <img src="https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lush green rainforest canopy with tropical wildlife" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Amazon Rainforest, Peru</h3>
+                            <div class="card__meta">
+                                <span>🌿 Rainforest</span>
+                                <span>🐒 Wildlife</span>
+                                <span>⭐ 4.7</span>
+                            </div>
+                            <p class="card__description">Explore the world's largest rainforest and discover incredible biodiversity in the heart of the Amazon basin.</p>
+                            <a href="tours.html" class="btn btn--primary">View Tours</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="beaches cities">
+                        <img src="https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Iconic Sydney Harbour Bridge and Opera House at sunset" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Sydney, Australia</h3>
+                            <div class="card__meta">
+                                <span>🏙️ City</span>
+                                <span>🏖️ Coastal</span>
+                                <span>⭐ 4.8</span>
+                            </div>
+                            <p class="card__description">Vibrant harbor city combining iconic landmarks, stunning beaches, and unique Australian culture and wildlife.</p>
+                            <a href="tours.html" class="btn btn--primary">View Tours</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="mountains adventure">
+                        <img src="https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ancient Inca ruins of Machu Picchu shrouded in morning mist" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Machu Picchu, Peru</h3>
+                            <div class="card__meta">
+                                <span>🏛️ Archaeological</span>
+                                <span>🥾 Trekking</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                            <p class="card__description">Discover the lost city of the Incas, one of the New Seven Wonders of the World, perched high in the Andes Mountains.</p>
+                            <a href="tours.html" class="btn btn--primary">View Tours</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="beaches adventure">
+                        <img src="https://images.pexels.com/photos/2587056/pexels-photo-2587056.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pristine Caribbean beach with palm trees and crystal blue water" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Barbados, Caribbean</h3>
+                            <div class="card__meta">
+                                <span>🏝️ Tropical</span>
+                                <span>🏄‍♂️ Water Sports</span>
+                                <span>⭐ 4.6</span>
+                            </div>
+                            <p class="card__description">Caribbean paradise offering white sand beaches, vibrant coral reefs, and rich cultural heritage in a tropical setting.</p>
+                            <a href="tours.html" class="btn btn--primary">View Tours</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <p style="font-size: var(--font-size-lg); margin-bottom: 2rem;">Can't find your dream destination?</p>
+                    <a href="services.html" class="btn btn--outline">Request Custom Itinerary</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--gray">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>Ready to Explore?</h2>
+                    <p style="font-size: var(--font-size-lg); margin-bottom: 2rem;">Browse our curated tours or contact us to plan your perfect adventure.</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="tours.html" class="btn btn--primary">Browse All Tours</a>
+                        <a href="contact.html" class="btn btn--outline">Plan Custom Trip</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Adventure Tourism</h3>
+                    <p>Creating unforgettable adventures and connecting travelers with extraordinary destinations around the world.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Services</h3>
+                    <ul class="footer__links">
+                        <li><a href="services.html">Custom Itineraries</a></li>
+                        <li><a href="services.html">Expert Guides</a></li>
+                        <li><a href="services.html">Travel Insurance</a></li>
+                        <li><a href="services.html">Airport Transfers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Contact</h3>
+                     <p>📧 vardanrajput412@gmail.com </p>
+                    <p>📞 +91 8510066465</p>
+                    <p>📍Faridabad Haryana 121004 India</p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 Adventure Tourism. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Adventure Tourism - Discover breathtaking destinations and unforgettable experiences with our expert-guided tours and personalized travel services."
+  />
+  <title>Adventure Tourism - Explore the World</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="header">
+    <nav class="container">
+      <div class="nav">
+        <a href="index.html" class="nav__logo">Adventure Tourism</a>
+        <ul class="nav__menu">
+          <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="destinations.html" class="nav__link">Destinations</a></li>
+          <li><a href="tours.html" class="nav__link">Tours</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+          <li><a href="blog.html" class="nav__link">Blog</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero__title">Discover Your Next Adventure</h1>
+        <p class="hero__subtitle">
+          Explore breathtaking destinations with our expert-guided tours and personalized travel experiences
+        </p>
+
+        <div class="search">
+          <form class="search__form" role="search" aria-label="Search tours and destinations">
+            <input
+              type="search"
+              class="search__input"
+              placeholder="Where do you want to go?"
+              aria-label="Destination search"
+            />
+            <button type="submit" class="search__btn">Search Adventures</button>
+          </form>
+        </div>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="tours.html" class="btn btn--white">Browse Tours</a>
+          <a href="destinations.html" class="btn btn--outline">View Destinations</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Featured Tours</h2>
+        <div class="grid grid--3">
+          <article class="card">
+            <img
+              src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Himalayan mountain peaks with snow"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Himalayan Trek Adventure</h3>
+              <div class="card__meta">
+                <span>⏱️ 14 days</span>
+                <span>🏔️ Nepal</span>
+                <span>⭐ 4.9</span>
+              </div>
+              <p class="card__description">
+                Experience the majestic Himalayas with our guided trekking adventure through Nepal's most stunning mountain trails.
+              </p>
+              <div class="card__price">From ₹2,499</div>
+              <a href="tour-himalayan-trek.html" class="btn btn--primary">View Details</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              src="https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Safari vehicle in African savanna"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">African Safari Experience</h3>
+              <div class="card__meta">
+                <span>⏱️ 10 days</span>
+                <span>🦁 Kenya</span>
+                <span>⭐ 4.8</span>
+              </div>
+              <p class="card__description">
+                Witness the incredible wildlife of Africa on this unforgettable safari through Kenya's national parks.
+              </p>
+              <div class="card__price">From ₹3,299</div>
+              <a href="tours.html" class="btn btn--primary">View Details</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              src="https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Traditional boats in crystal clear tropical water"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Island Hopping Paradise</h3>
+              <div class="card__meta">
+                <span>⏱️ 7 days</span>
+                <span>🏝️ Thailand</span>
+                <span>⭐ 4.7</span>
+              </div>
+              <p class="card__description">
+                Discover pristine beaches and crystal-clear waters while island hopping in Thailand's most beautiful archipelagos.
+              </p>
+              <div class="card__price">From ₹1,899</div>
+              <a href="tours.html" class="btn btn--primary">View Details</a>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="tours.html" class="btn btn--outline">See All Tours</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--gray">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Why Choose Adventure Tourism?</h2>
+        <div class="stats">
+          <div>
+            <div class="stat__number">500+</div>
+            <div class="stat__label">Happy Travelers</div>
+          </div>
+          <div>
+            <div class="stat__number">25+</div>
+            <div class="stat__label">Countries Visited</div>
+          </div>
+          <div>
+            <div class="stat__number">15+</div>
+            <div class="stat__label">Years Experience</div>
+          </div>
+          <div>
+            <div class="stat__number">4.9</div>
+            <div class="stat__label">Average Rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Popular Destinations</h2>
+        <div class="grid grid--4">
+          <a href="destination-kathmandu.html" class="card">
+            <img
+              src="https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Traditional temple in Kathmandu"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Kathmandu, Nepal</h3>
+              <p class="card__description">
+                Ancient temples and mountain views await in Nepal's cultural heart.
+              </p>
+            </div>
+          </a>
+
+          <a href="destinations.html" class="card">
+            <img
+              src="https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Scenic view of Patagonia mountains and lakes"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Patagonia, Chile</h3>
+              <p class="card__description">Dramatic landscapes and pristine wilderness in South America.</p>
+            </div>
+          </a>
+
+          <a href="destinations.html" class="card">
+            <img
+              src="https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Northern lights over snowy landscape"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Iceland</h3>
+              <p class="card__description">Land of fire and ice with spectacular northern lights.</p>
+            </div>
+          </a>
+
+          <a href="destinations.html" class="card">
+            <img
+              src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Traditional ryokan with mountain view"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Kyoto, Japan</h3>
+              <p class="card__description">
+                Traditional culture meets modern adventure in historic Japan.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="destinations.html" class="btn btn--outline">Explore All Destinations</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--gray">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">What Our Travelers Say</h2>
+        <div class="grid grid--3">
+          <div class="testimonial">
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p class="testimonial__quote">
+              "The Himalayan trek was absolutely incredible! The guides were knowledgeable and the views were breathtaking. This was truly the adventure of a lifetime."
+            </p>
+            <div class="testimonial__author">Anurag Kumar</div>
+            <div class="testimonial__location">gujarat , India</div>
+          </div>
+          <div class="testimonial">
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p class="testimonial__quote">
+              "Perfect organization and attention to detail. The safari exceeded all expectations and we saw all the Big Five! Can't wait to book our next adventure."
+            </p>
+            <div class="testimonial__author">Rahul pandit</div>
+            <div class="testimonial__location">Bihar , India</div>
+          </div>
+          <div class="testimonial">
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p class="testimonial__quote">
+              "The island hopping tour was magical. Beautiful destinations, great accommodations, and wonderful fellow travelers. Highly recommend!"
+            </p>
+            <div class="testimonial__author">Suresh Suthar</div>
+            <div class="testimonial__location">Sydney, Australia</div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="testimonials.html" class="btn btn--outline">Read More Reviews</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3>Adventure Tourism</h3>
+          <p>
+            Creating unforgettable adventures and connecting travelers with extraordinary destinations around the world.
+          </p>
+        </div>
+
+        <div class="footer__section">
+          <h3>Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h3>Services</h3>
+          <ul class="footer__links">
+            <li><a href="services.html">Custom Itineraries</a></li>
+            <li><a href="services.html">Expert Guides</a></li>
+            <li><a href="services.html">Travel Insurance</a></li>
+            <li><a href="services.html">Airport Transfers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h3>Contact</h3>
+          <p>📧 vardanrajput412@gmail.com</p>
+          <p>📞 +91 8510066465</p>
+          <p>📍Faridabad Haryana 121004 India</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Adventure Tourism. All rights reserved. | Privacy Policy | Terms of Service</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vue (defer so DOM is ready) -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js" defer></script>
+
+  <!-- All JS wrapped after DOM is ready -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // ---- Vue app (safe DOM access) ----
+      if (window.Vue) {
+        const app = Vue.createApp({
+          data() {
+            return {
+              searchQuery: '',
+              tours: [
+                { name: 'Himalayan Trek Adventure', location: 'Nepal' },
+                { name: 'African Safari Experience', location: 'Kenya' },
+                { name: 'Island Hopping Paradise', location: 'Thailand' },
+                { name: 'Patagonia Wilderness Trek', location: 'Chile' },
+                { name: 'Kyoto Heritage Journey', location: 'Japan' }
+              ],
+              showMenu: false
+            };
+          },
+          computed: {
+            filteredTours() {
+              const q = this.searchQuery.toLowerCase();
+              return this.tours.filter(t =>
+                t.name.toLowerCase().includes(q) || t.location.toLowerCase().includes(q)
+              );
+            }
+          },
+          methods: {
+            toggleMenu() {
+              this.showMenu = !this.showMenu;
+              const m = document.querySelector('.nav__menu');
+              if (m) m.classList.toggle('nav__menu--open', this.showMenu);
+            },
+            handleSearch(e) {
+              e.preventDefault();
+              if (this.searchQuery.trim()) {
+                alert(`Searching for "${this.searchQuery}"...`);
+              }
+            }
+          }
+        });
+        app.mount('#main');
+      } else {
+        console.warn('Vue failed to load. Check your network or CSP.');
+      }
+
+      // ---- Enhancements & guards ----
+      (function () {
+        // Inject minimal styles
+        const style = document.createElement('style');
+        style.innerHTML = `
+          .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+          .reveal--visible{opacity:1;transform:none}
+          .header.header--shadow{box-shadow:0 8px 24px rgba(0,0,0,.08);background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(8px)}
+          .back-to-top{position:fixed;right:1rem;bottom:1rem;z-index:50;border:none;border-radius:9999px;padding:.75rem 1rem;font:inherit;cursor:pointer;display:none}
+          .back-to-top--show{display:inline-flex}
+          .suggestions{position:absolute;left:0;right:0;top:100%;margin-top:.25rem;background:#fff;border:1px solid #eee;border-radius:.5rem;box-shadow:0 12px 24px rgba(0,0,0,.08);overflow:hidden;max-height:260px;overflow-y:auto}
+          .suggestions__item{padding:.65rem .85rem;cursor:pointer}
+          .suggestions__item[aria-selected="true"], .suggestions__item:hover{background:#f6f7f9}
+          .search{position:relative}
+          .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        `;
+        document.head.appendChild(style);
+
+        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Smooth scroll for hash links
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{
+          a.addEventListener('click',e=>{
+            const id=a.getAttribute('href');
+            if(id && id.length>1){
+              const target=document.querySelector(id);
+              if(target){
+                e.preventDefault();
+                target.scrollIntoView({behavior: prefersReducedMotion ? 'auto' : 'smooth'});
+                try { history.pushState(null,'',id); } catch(_) {}
+              }
+            }
+          });
+        });
+
+        // Sticky header shadow
+        const header = document.querySelector('.header');
+        const shadowToggle = () => {
+          if (!header) return;
+          if (window.scrollY > 8) header.classList.add('header--shadow');
+          else header.classList.remove('header--shadow');
+        };
+        shadowToggle();
+        window.addEventListener('scroll', shadowToggle, {passive:true});
+
+        // Lazy-load images
+        document.querySelectorAll('img:not([loading])').forEach(img => img.setAttribute('loading','lazy'));
+
+        // Scroll reveal
+        const revealables = [];
+        document.querySelectorAll('.card, .section h2, .testimonial, .stats > div').forEach(el=>{
+          el.classList.add('reveal');
+          revealables.push(el);
+        });
+        if ('IntersectionObserver' in window) {
+          const io = new IntersectionObserver((entries,obs)=>{
+            entries.forEach(entry=>{
+              if(entry.isIntersecting){
+                entry.target.classList.add('reveal--visible');
+                obs.unobserve(entry.target);
+              }
+            });
+          }, {threshold: .15, rootMargin: '0px 0px -40px 0px'});
+          revealables.forEach(el=>io.observe(el));
+        } else {
+          revealables.forEach(el=>el.classList.add('reveal--visible'));
+        }
+
+        // Animated counters
+        const counterEls = document.querySelectorAll('.stat__number');
+        const parseNumber = (txt) => {
+          const plus = /\+$/.test(txt);
+          const num = parseFloat(txt.replace(/[^\d.]/g,''));
+          return {num: isNaN(num) ? 0 : num, plus};
+        };
+        const animateCount = (el) => {
+          const {num, plus} = parseNumber(el.textContent.trim());
+          const duration = 1200;
+          const start = performance.now();
+          const formatter = new Intl.NumberFormat('en-IN');
+          const step = (t) => {
+            const p = Math.min(1, (t - start) / duration);
+            const val = Math.floor(num * (prefersReducedMotion ? 1 : p));
+            el.textContent = formatter.format(val) + (plus ? '+' : '');
+            if (p < 1 && !prefersReducedMotion) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        };
+        if ('IntersectionObserver' in window) {
+          const countersObserver = new IntersectionObserver((entries,obs)=>{
+            entries.forEach(entry=>{
+              if(entry.isIntersecting){
+                animateCount(entry.target);
+                obs.unobserve(entry.target);
+              }
+            });
+          }, {threshold: .5});
+          counterEls.forEach(el=>countersObserver.observe(el));
+        } else {
+          counterEls.forEach(animateCount);
+        }
+
+        // Typewriter effect
+        const heroSub = document.querySelector('.hero__subtitle');
+        if (heroSub) {
+          const base = 'Explore breathtaking destinations with ';
+          const phrases = ['expert-guided treks','wildlife safaris','island hopping','cultural journeys','personalized itineraries'];
+          let i = 0, j = 0, deleting = false;
+          const tick = () => {
+            if (prefersReducedMotion) { heroSub.textContent = base + 'unforgettable experiences'; return; }
+            const current = phrases[i];
+            if (!deleting) {
+              j++; heroSub.textContent = base + current.slice(0,j);
+              if (j === current.length) { deleting = true; setTimeout(tick, 1200); return; }
+            } else {
+              j--; heroSub.textContent = base + current.slice(0,j);
+              if (j === 0) { deleting = false; i = (i+1) % phrases.length; }
+            }
+            setTimeout(tick, deleting ? 35 : 55);
+          };
+          tick();
+        }
+
+        // Search suggestions
+        const SEARCH_DATA = [
+          { label: 'Himalayan Trek Adventure', href: 'tour-himalayan-trek.html', meta: 'Nepal' },
+          { label: 'African Safari Experience', href: 'tours.html', meta: 'Kenya' },
+          { label: 'Island Hopping Paradise', href: 'tours.html', meta: 'Thailand' },
+          { label: 'Patagonia Wilderness Trek', href: 'tours.html', meta: 'Chile' },
+          { label: 'Kyoto Heritage Journey', href: 'tours.html', meta: 'Japan' },
+          { label: 'Kathmandu, Nepal', href: 'destination-kathmandu.html', meta: 'Destination' },
+          { label: 'Iceland', href: 'destinations.html', meta: 'Destination' },
+          { label: 'Patagonia, Chile', href: 'destinations.html', meta: 'Destination' },
+          { label: 'Kyoto, Japan', href: 'destinations.html', meta: 'Destination' }
+        ];
+        const search = document.querySelector('.search');
+        const searchInput = document.querySelector('.search__input');
+        const searchForm = document.querySelector('.search__form');
+        let activeIndex = -1;
+
+        if (search && searchInput && searchForm) {
+          const list = document.createElement('div');
+          list.className = 'suggestions';
+          list.setAttribute('role', 'listbox');
+          list.id = 'search-suggestions';
+          list.style.display = 'none';
+          search.appendChild(list);
+
+          const srOnly = document.createElement('div');
+          srOnly.className = 'visually-hidden';
+          srOnly.id = 'search-help';
+          srOnly.textContent = 'Use arrow keys to navigate suggestions, Enter to select.';
+          search.appendChild(srOnly);
+
+          searchInput.setAttribute('aria-autocomplete','list');
+          searchInput.setAttribute('aria-controls', list.id);
+          searchInput.setAttribute('aria-describedby', 'search-help');
+
+          const setActive = (idx) => {
+            const children = Array.from(list.children);
+            children.forEach((el,i)=>el.setAttribute('aria-selected', i===idx ? 'true' : 'false'));
+            activeIndex = idx;
+          };
+
+          const filter = (q) => {
+            q = (q||'').trim().toLowerCase();
+            if (!q) return [];
+            return SEARCH_DATA
+              .map(x => ({...x, score: (x.label+' '+x.meta).toLowerCase().includes(q) ? 1 : 0}))
+              .filter(x => x.score>0);
+          };
+
+          const render = (items) => {
+            list.innerHTML = '';
+            activeIndex = -1;
+            items.slice(0,8).forEach((item, idx) => {
+              const opt = document.createElement('div');
+              opt.className = 'suggestions__item';
+              opt.setAttribute('role','option');
+              opt.setAttribute('aria-selected','false');
+              opt.tabIndex = -1;
+              opt.innerHTML = `<strong>${item.label}</strong><div style="font-size:.85em;opacity:.7">${item.meta}</div>`;
+              opt.addEventListener('mousedown', (e)=>{ e.preventDefault(); window.location.href = item.href; });
+              opt.addEventListener('mousemove', ()=>setActive(idx));
+              list.appendChild(opt);
+            });
+            list.style.display = items.length ? 'block' : 'none';
+          };
+
+          searchInput.addEventListener('input', () => render(filter(searchInput.value)));
+          searchInput.addEventListener('keydown', (e) => {
+            const items = Array.from(list.children);
+            if (!items.length) return;
+            if (e.key === 'ArrowDown') { e.preventDefault(); setActive(Math.min(items.length-1, activeIndex+1)); }
+            else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(Math.max(0, activeIndex-1)); }
+            else if (e.key === 'Enter' && activeIndex >= 0) {
+              e.preventDefault();
+              items[activeIndex].dispatchEvent(new Event('mousedown'));
+            } else if (e.key === 'Escape') { list.style.display = 'none'; }
+          });
+          document.addEventListener('click', (e)=>{ if (!search.contains(e.target)) list.style.display = 'none'; });
+
+          searchForm.addEventListener('submit', (e) => {
+            if (!searchInput.value || !searchInput.value.trim()) return;
+            const first = filter(searchInput.value)[0];
+            if (first) { e.preventDefault(); window.location.href = first.href; }
+          });
+        }
+
+        // Testimonial auto-rotator
+        const testimonials = Array.from(document.querySelectorAll('.testimonial'));
+        if (testimonials.length > 1) {
+          let idx = 0;
+          const show = (i) => {
+            testimonials.forEach((t, k) => { t.style.display = (k===i) ? 'block' : 'none'; });
+          };
+          show(0);
+          setInterval(() => {
+            if (document.hidden) return;
+            idx = (idx + 1) % testimonials.length;
+            show(idx);
+          }, 5000);
+        }
+
+        // Back to top button
+        const backBtn = document.createElement('button');
+        backBtn.className = 'back-to-top';
+        backBtn.setAttribute('aria-label','Back to top');
+        backBtn.textContent = '↑ Top';
+        document.body.appendChild(backBtn);
+        const backToggle = () => {
+          if (window.scrollY > 600) backBtn.classList.add('back-to-top--show');
+          else backBtn.classList.remove('back-to-top--show');
+        };
+        backToggle();
+        window.addEventListener('scroll', backToggle, {passive:true});
+        backBtn.addEventListener('click', () => {
+          window.scrollTo({top:0, behavior: prefersReducedMotion ? 'auto' : 'smooth'});
+        });
+
+        // Mobile menu: toggle + close on Esc/outside
+        const navToggle = document.querySelector('.nav__toggle');
+        const navMenu = document.querySelector('.nav__menu');
+        if (navToggle && navMenu) {
+          navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('nav__menu--open');
+          });
+          document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ navMenu.classList.remove('nav__menu--open'); }});
+          document.addEventListener('click', (e)=>{
+            if (!navMenu.classList.contains('nav__menu--open')) return;
+            const within = navMenu.contains(e.target) || navToggle.contains(e.target);
+            if (!within) navMenu.classList.remove('nav__menu--open');
+          });
+        }
+      })();
+    });
+  </script>
+</body>
+</html>

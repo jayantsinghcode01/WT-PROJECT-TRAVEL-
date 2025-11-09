@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Book your adventure tour with Adventure Tourism - Step 1: Enter traveler information and tour preferences.">
+  <title>Book Your Adventure - Adventure Tourism</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .6s ease, transform .6s ease
+    }
+
+    .reveal--visible {
+      opacity: 1;
+      transform: none
+    }
+
+    .header.header--shadow {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+      background: rgba(255, 255, 255, .9);
+      backdrop-filter: saturate(180%) blur(8px)
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 50;
+      border: none;
+      border-radius: 9999px;
+      padding: .75rem 1rem;
+      font: inherit;
+      cursor: pointer;
+      display: none
+    }
+
+    .back-to-top--show {
+      display: inline-flex
+    }
+
+    .summary {
+      background: var(--color-gray-50);
+      border-radius: var(--border-radius-lg);
+      padding: 1.25rem
+    }
+
+    .summary__row {
+      display: flex;
+      justify-content: space-between;
+      margin: .35rem 0
+    }
+
+    .summary__total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: .75rem;
+      padding-top: .75rem;
+      border-top: 1px dashed var(--color-gray-300);
+      font-weight: 700
+    }
+
+    .note {
+      font-size: .9rem;
+      color: var(--color-gray-600)
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="header">
+    <nav class="container">
+      <div class="nav">
+        <a href="index.html" class="nav__logo">Adventure Tourism</a>
+        <ul class="nav__menu">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="destinations.html" class="nav__link">Destinations</a></li>
+          <li><a href="tours.html" class="nav__link">Tours</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+          <li><a href="blog.html" class="nav__link">Blog</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div style="max-width: 980px; margin: 0 auto;">
+          <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+            <h1>Book Your Adventure</h1>
+            <p style="font-size: var(--font-size-lg); color: var(--color-gray-600);">Step 1 of 2: Traveler Information
+            </p>
+            <!-- Progress indicator -->
+            <div style="display:flex; justify-content:center; margin:2rem 0;">
+              <div style="display:flex; align-items:center; gap:1rem;">
+                <div
+                  style="width:2rem; height:2rem; border-radius:50%; background-color: var(--color-primary); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:600;">
+                  1</div>
+                <div style="width:3rem; height:2px; background-color: var(--color-gray-300);"></div>
+                <div
+                  style="width:2rem; height:2rem; border-radius:50%; background-color: var(--color-gray-300); color: var(--color-gray-600); display:flex; align-items:center; justify-content:center; font-weight:600;">
+                  2</div>
+              </div>
+            </div>
+          </div>
+
+          <form id="booking-form" class="form reveal" action="booking-confirmation.html" method="get">
+            <!-- Tour Selection -->
+            <div
+              style="background-color: var(--color-gray-50); padding: 2rem; border-radius: var(--border-radius-lg); margin-bottom: 3rem;">
+              <h2 style="margin-bottom: 2rem;">Select Your Tour</h2>
+
+              <div class="form__group">
+                <label for="tour-selection" class="form__label">Choose Tour *</label>
+                <select id="tour-selection" name="tour" class="form__select" required>
+                  <option value="">Select a tour</option>
+                  <option value="himalayan-trek">Himalayan Trek Adventure (14 days) - ₹2,499</option>
+                  <option value="african-safari">African Safari Experience (10 days) - ₹3,299</option>
+                  <option value="island-hopping">Island Hopping Paradise (7 days) - ₹1,899</option>
+                  <option value="kathmandu-heritage">Kathmandu Cultural Heritage (5 days) - ₹899</option>
+                  <option value="patagonia-trek">Patagonia Wilderness Trek (8 days) - ₹2,199</option>
+                  <option value="japan-cultural">Japan Cultural Discovery (9 days) - ₹2,799</option>
+                  <option value="inca-trail">Inca Trail to Machu Picchu (12 days) - ₹2,899</option>
+                  <option value="northern-lights">Northern Lights Adventure (5 days) - ₹1,699</option>
+                  <option value="maldives-luxury">Maldives Luxury Escape (6 days) - ₹3,999</option>
+                  <option value="amazon-expedition">Amazon Rainforest Expedition (7 days) - ₹1,999</option>
+                  <option value="custom-tour">Custom Tour - Contact for pricing</option>
+                </select>
+              </div>
+
+              <div class="grid grid--2">
+                <div class="form__group">
+                  <label for="departure-date" class="form__label">Preferred Departure Date *</label>
+                  <input type="date" id="departure-date" name="departure-date" class="form__input" required>
+                  <div class="note" id="date-note"></div>
+                </div>
+
+                <div class="form__group">
+                  <label for="travelers" class="form__label">Number of Travelers *</label>
+                  <select id="travelers" name="travelers" class="form__select" required>
+                    <option value="">Select travelers</option>
+                    <option value="1">1 Traveler</option>
+                    <option value="2">2 Travelers</option>
+                    <option value="3">3 Travelers</option>
+                    <option value="4">4 Travelers</option>
+                    <option value="5">5 Travelers</option>
+                    <option value="6">6+ Travelers (Group discount available)</option>
+                  </select>
+                  <div class="note" id="group-note" style="display:none;">Group bookings of 6+ qualify for special
+                    discounts—applied on the next step.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Primary Traveler Information -->
+            <div style="margin-bottom: 3rem;">
+              <h2 style="margin-bottom: 2rem;">Primary Traveler Information</h2>
+
+              <div class="grid grid--2">
+                <div class="form__group">
+                  <label for="first-name" class="form__label">First Name *</label>
+                  <input type="text" id="first-name" name="first-name" class="form__input" required>
+                </div>
+
+                <div class="form__group">
+                  <label for="last-name" class="form__label">Last Name *</label>
+                  <input type="text" id="last-name" name="last-name" class="form__input" required>
+                </div>
+              </div>
+
+              <div class="grid grid--2">
+                <div class="form__group">
+                  <label for="email" class="form__label">Email Address *</label>
+                  <input type="email" id="email" name="email" class="form__input" required>
+                </div>
+
+                <div class="form__group">
+                  <label for="phone" class="form__label">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" class="form__input" maxlength="10" required>
+                </div>
+              </div>
+
+              <div class="grid grid--2">
+                <div class="form__group">
+                  <label for="nationality" class="form__label">Nationality *</label>
+                  <select id="nationality" name="nationality" class="form__select" required>
+                    <option value="">Select nationality</option>
+                    <option value="US">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="CA">Canada</option>
+                    <option value="AU">Australia</option>
+                    <option value="DE">Germany</option>
+                    <option value="FR">France</option>
+                    <option value="JP">Japan</option>
+                    <option value="IN">India</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form__group">
+                  <label for="birth-date" class="form__label">Date of Birth *</label>
+                  <input type="date" id="birth-date" name="birth-date" class="form__input" required>
+                </div>
+              </div>
+
+              <div class="form__group">
+                <label for="address" class="form__label">Home Address</label>
+                <textarea id="address" name="address" class="form__textarea" rows="3"
+                  placeholder="Street address, city, state/province, postal code, country"></textarea>
+              </div>
+            </div>
+
+            <!-- Travel Preferences -->
+            <div style="margin-bottom: 3rem;">
+              <h2 style="margin-bottom: 2rem;">Travel Preferences</h2>
+
+              <div class="grid grid--2">
+                <div class="form__group">
+                  <label for="accommodation" class="form__label">Accommodation Preference</label>
+                  <select id="accommodation" name="accommodation" class="form__select">
+                    <option value="standard">Standard (as per tour)</option>
+                    <option value="upgraded">Upgraded (additional cost)</option>
+                    <option value="luxury">Luxury (additional cost)</option>
+                  </select>
+                </div>
+
+                <div class="form__group">
+                  <label for="room-type" class="form__label">Room Type</label>
+                  <select id="room-type" name="room-type" class="form__select">
+                    <option value="shared">Shared room (twin beds)</option>
+                    <option value="single">Single room (additional cost)</option>
+                    <option value="double">Double room</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form__group">
+                <label for="dietary" class="form__label">Dietary Requirements</label>
+                <textarea id="dietary" name="dietary" class="form__textarea" rows="2"
+                  placeholder="Please specify any dietary restrictions, allergies, or special meal requirements"></textarea>
+              </div>
+
+              <div class="form__group">
+                <label for="medical" class="form__label">Medical Information</label>
+                <textarea id="medical" name="medical" class="form__textarea" rows="3"
+                  placeholder="Please share any medical conditions, medications, or physical limitations we should be aware of"></textarea>
+              </div>
+
+              <div class="form__group">
+                <label for="emergency-contact" class="form__label">Emergency Contact</label>
+                <textarea id="emergency-contact" name="emergency-contact" class="form__textarea" rows="2"
+                  placeholder="Name, relationship, phone number, and email of emergency contact"></textarea>
+              </div>
+            </div>
+
+            <!-- Additional Services -->
+            <div style="margin-bottom: 3rem;">
+              <h2 style="margin-bottom: 2rem;">Additional Services</h2>
+
+              <div style="display:grid; gap:1rem;">
+                <label
+                  style="display:flex; align-items:center; gap:1rem; padding:1rem; background-color:var(--color-gray-50); border-radius:var(--border-radius);">
+                  <input type="checkbox" name="services" value="airport-transfer" class="service-check"
+                    style="margin:0;">
+                  <span>Airport transfers (+₹50)</span>
+                </label>
+
+                <label
+                  style="display:flex; align-items:center; gap:1rem; padding:1rem; background-color:var(--color-gray-50); border-radius:var(--border-radius);">
+                  <input type="checkbox" name="services" value="travel-insurance" class="service-check"
+                    style="margin:0;">
+                  <span>Travel insurance (+₹125)</span>
+                </label>
+
+                <div
+                  style="display:grid; gap:.5rem; padding:1rem; background-color:var(--color-gray-50); border-radius:var(--border-radius);">
+                  <label style="display:flex; align-items:center; gap:1rem;">
+                    <input type="checkbox" name="services" value="equipment-rental" class="service-check"
+                      id="equipment-check" style="margin:0;">
+                    <span>Equipment rental (+varies)</span>
+                  </label>
+                  <div id="equipment-estimate-wrap" class="note" style="display:none;">
+                    Optional estimate:&nbsp;
+                    <input type="number" min="0" step="50" style="width:120px;" id="equipment-estimate"> ₹
+                    <span style="opacity:.8"> (adds to total for preview)</span>
+                  </div>
+                </div>
+
+                <label
+                  style="display:flex; align-items:center; gap:1rem; padding:1rem; background-color:var(--color-gray-50); border-radius:var(--border-radius);">
+                  <input type="checkbox" name="services" value="pre-post-accommodation" class="service-check"
+                    style="margin:0;">
+                  <span>Pre/post-tour accommodation (+₹75/night)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Special Requests -->
+            <div style="margin-bottom: 3rem;">
+              <h2 style="margin-bottom: 2rem;">Special Requests</h2>
+              <div class="form__group">
+                <label for="special-requests" class="form__label">Additional Comments or Requests</label>
+                <textarea id="special-requests" name="special-requests" class="form__textarea" rows="4"
+                  placeholder="Please share any special requests, celebration occasions, or additional information that would help us customize your experience"></textarea>
+              </div>
+            </div>
+
+            <!-- Summary + Terms -->
+            <div class="grid grid--2 reveal" style="margin-bottom:2rem;">
+              <div class="summary">
+                <h3 style="margin-bottom:.75rem;">Booking Summary</h3>
+                <div class="summary__row"><span>Tour</span><strong id="summary-tour">—</strong></div>
+                <div class="summary__row"><span>Travelers</span><strong id="summary-travelers">0</strong></div>
+                <div class="summary__row"><span>Base per traveler</span><strong id="summary-base">₹0</strong></div>
+                <div class="summary__row" id="summary-extras-row" style="display:none;"><span>Extras per
+                    traveler</span><strong id="summary-extras">₹0</strong></div>
+                <div class="summary__row" id="summary-equip-row" style="display:none;"><span>Equipment
+                    estimate</span><strong id="summary-equip">₹0</strong></div>
+                <div class="summary__total"><span>Estimated total</span><strong id="summary-total">₹0</strong></div>
+                <div class="note" style="margin-top:.5rem;">Final price confirmed on the payment step. Taxes/fees may
+                  apply.</div>
+              </div>
+
+              <div style="padding:1rem 0;">
+                <div
+                  style="margin-bottom:1rem; padding:1rem; background:var(--color-gray-50); border-radius:var(--border-radius-lg);">
+                  <div class="form__group">
+                    <label style="display:flex; align-items:flex-start; gap:1rem;">
+                      <input type="checkbox" id="agree-terms" name="terms" value="agreed" required
+                        style="margin-top:.25rem; flex-shrink:0;">
+                      <span>I agree to the <a href="#" style="color: var(--color-primary);">Terms and Conditions</a> and
+                        <a href="#" style="color: var(--color-primary);">Privacy Policy</a> *</span>
+                    </label>
+                  </div>
+                  <div class="form__group">
+                    <label style="display:flex; align-items:flex-start; gap:1rem;">
+                      <input type="checkbox" id="newsletter" name="newsletter" value="subscribe"
+                        style="margin-top:.25rem; flex-shrink:0;">
+                      <span>Subscribe to our newsletter for travel tips and special offers</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div style="text-align:center;">
+                  <button id="submit-btn" type="submit" class="btn btn--primary"
+                    style="padding: 1rem 3rem; font-size: var(--font-size-lg);" disabled>Continue to Review &
+                    Payment</button>
+                  <p style="margin-top:1rem; color:var(--color-gray-600); font-size: var(--font-size-sm);">Next step:
+                    Review your booking details and proceed to secure payment</p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3>Adventure Tourism</h3>
+          <p>Creating unforgettable adventures and connecting travelers with extraordinary destinations around the
+            world.</p>
+        </div>
+        <div class="footer__section">
+          <h3>Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h3>Services</h3>
+          <ul class="footer__links">
+            <li><a href="services.html">Custom Itineraries</a></li>
+            <li><a href="services.html">Expert Guides</a></li>
+            <li><a href="services.html">Travel Insurance</a></li>
+            <li><a href="services.html">Airport Transfers</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h3>Contact</h3>
+          <p>📧 vardanrajput412@gmail.com</p>
+          <p>📞 +91 8510066465</p>
+          <p>📍Faridabad Haryana 121004 India</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Adventure Tourism. All rights reserved. | Privacy Policy | Terms of Service</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Utility: INR format
+    const fmtINR = (n) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(isFinite(n) ? n : 0);
+
+    // Base data
+    const BASE_PRICES = {
+      'himalayan-trek': 2499,
+      'african-safari': 3299,
+      'island-hopping': 1899,
+      'kathmandu-heritage': 899,
+      'patagonia-trek': 2199,
+      'japan-cultural': 2799,
+      'inca-trail': 2899,
+      'northern-lights': 1699,
+      'maldives-luxury': 3999,
+      'amazon-expedition': 1999
+    };
+    const TOUR_LABEL = {
+      'himalayan-trek': 'Himalayan Trek Adventure',
+      'african-safari': 'African Safari Experience',
+      'island-hopping': 'Island Hopping Paradise',
+      'kathmandu-heritage': 'Kathmandu Cultural Heritage',
+      'patagonia-trek': 'Patagonia Wilderness Trek',
+      'japan-cultural': 'Japan Cultural Discovery',
+      'inca-trail': 'Inca Trail to Machu Picchu',
+      'northern-lights': 'Northern Lights Adventure',
+      'maldives-luxury': 'Maldives Luxury Escape',
+      'amazon-expedition': 'Amazon Rainforest Expedition',
+      'custom-tour': 'Custom Tour'
+    };
+    const EXTRA_SERVICES = {
+      'airport-transfer': 50,
+      'travel-insurance': 125,
+      'equipment-rental': 0, // variable
+      'pre-post-accommodation': 75
+    };
+
+    // On load
+    window.addEventListener('DOMContentLoaded', () => {
+      // Header shadow
+      const header = document.querySelector('.header');
+      const headerShadow = () => {
+        if (window.scrollY > 8) header.classList.add('header--shadow');
+        else header.classList.remove('header--shadow');
+      };
+      headerShadow();
+      window.addEventListener('scroll', headerShadow, { passive: true });
+
+      // Back to top
+      const backBtn = document.createElement('button');
+      backBtn.className = 'back-to-top';
+      backBtn.setAttribute('aria-label', 'Back to top');
+      backBtn.textContent = '↑ Top';
+      document.body.appendChild(backBtn);
+      const toggleBack = () => {
+        if (window.scrollY > 600) backBtn.classList.add('back-to-top--show');
+        else backBtn.classList.remove('back-to-top--show');
+      };
+      toggleBack();
+      window.addEventListener('scroll', toggleBack, { passive: true });
+      backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      // Mobile menu
+      const navToggle = document.querySelector('.nav__toggle');
+      const navMenu = document.querySelector('.nav__menu');
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => navMenu.classList.toggle('nav__menu--open'));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') navMenu.classList.remove('nav__menu--open'); });
+        document.addEventListener('click', e => {
+          if (!navMenu.classList.contains('nav__menu--open')) return;
+          const within = navMenu.contains(e.target) || navToggle.contains(e.target);
+          if (!within) navMenu.classList.remove('nav__menu--open');
+        });
+      }
+
+      // Reveal
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries, obs) => {
+          entries.forEach(en => {
+            if (en.isIntersecting) { en.target.classList.add('reveal--visible'); obs.unobserve(en.target); }
+          });
+        }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(el => io.observe(el));
+      } else {
+        reveals.forEach(el => el.classList.add('reveal--visible'));
+      }
+
+      // Dates: min/max
+      const dep = document.getElementById('departure-date');
+      const dob = document.getElementById('birth-date');
+      const todayISO = new Date().toISOString().slice(0, 10);
+      if (dep) dep.min = todayISO;
+      if (dob) dob.max = todayISO;
+
+      // Elements for calculator
+      const elTour = document.getElementById('tour-selection');
+      const elTrav = document.getElementById('travelers');
+      const elEquipCheck = document.getElementById('equipment-check');
+      const elEquipWrap = document.getElementById('equipment-estimate-wrap');
+      const elEquipInput = document.getElementById('equipment-estimate');
+      const elDateNote = document.getElementById('date-note');
+      const elGroupNote = document.getElementById('group-note');
+      const elForm = document.getElementById('booking-form');
+      const elSubmit = document.getElementById('submit-btn');
+      const elAgree = document.getElementById('agree-terms');
+
+      // Summary fields
+      const sTour = document.getElementById('summary-tour');
+      const sTrav = document.getElementById('summary-travelers');
+      const sBase = document.getElementById('summary-base');
+      const sExtrasRow = document.getElementById('summary-extras-row');
+      const sExtras = document.getElementById('summary-extras');
+      const sEquipRow = document.getElementById('summary-equip-row');
+      const sEquip = document.getElementById('summary-equip');
+      const sTotal = document.getElementById('summary-total');
+
+      // Selected services
+      const serviceChecks = Array.from(document.querySelectorAll('.service-check'));
+
+      // State
+      const state = {
+        tour: '',
+        travelers: 0,
+        departureDate: '',
+        services: new Set(),
+        equipmentEstimate: 0
+      };
+
+      // Helpers
+      const extrasPerPerson = () => {
+        let sum = 0;
+        state.services.forEach(s => {
+          if (s === 'equipment-rental') return;
+          sum += (EXTRA_SERVICES[s] || 0);
+        });
+        return sum;
+      };
+      const basePerPerson = () => BASE_PRICES[state.tour] || 0;
+
+      const calcAndRender = () => {
+        // Group note
+        elGroupNote.style.display = (state.travelers >= 6) ? 'block' : 'none';
+
+        // Equipment estimate visibility
+        const equipSelected = state.services.has('equipment-rental');
+        elEquipWrap.style.display = equipSelected ? 'block' : 'none';
+
+        // Summary labels
+        sTour.textContent = TOUR_LABEL[state.tour] || '—';
+        sTrav.textContent = state.travelers || 0;
+
+        const base = basePerPerson();
+        const extras = extrasPerPerson();
+        const equip = equipSelected ? (state.equipmentEstimate || 0) : 0;
+        const subtotal = (base + extras) * (state.travelers || 0);
+        const total = Math.max(0, subtotal + equip);
+
+        sBase.textContent = fmtINR(base);
+        if (extras > 0) {
+          sExtrasRow.style.display = 'flex';
+          sExtras.textContent = fmtINR(extras);
+        } else {
+          sExtrasRow.style.display = 'none';
+        }
+        if (equipSelected && equip > 0) {
+          sEquipRow.style.display = 'flex';
+          sEquip.textContent = fmtINR(equip);
+        } else {
+          sEquipRow.style.display = 'none';
+        }
+        sTotal.textContent = fmtINR(total);
+
+        // Enable submit if required fields ok
+        const requiredOk = !!(state.tour && state.travelers && state.departureDate && elAgree.checked);
+        elSubmit.disabled = !requiredOk;
+      };
+
+      // Event bindings
+      elTour.addEventListener('change', e => { state.tour = e.target.value; calcAndRender(); });
+      elTrav.addEventListener('change', e => { state.travelers = parseInt(e.target.value || '0', 10) || 0; calcAndRender(); });
+
+      if (dep) {
+        dep.addEventListener('change', e => {
+          state.departureDate = e.target.value;
+          // Simple date notes
+          elDateNote.textContent = '';
+          if (state.departureDate) {
+            const depDate = new Date(state.departureDate + 'T00:00:00');
+            const today = new Date(new Date().toISOString().slice(0, 10));
+            if (depDate < today) {
+              elDateNote.textContent = 'Please pick a future date.';
+            } else {
+              const diff = Math.ceil((depDate - today) / (1000 * 60 * 60 * 24));
+              if (diff <= 7) elDateNote.textContent = 'Heads up: departures within 7 days may have limited availability.';
+            }
+          }
+          calcAndRender();
+        });
+      }
+
+      serviceChecks.forEach(chk => {
+        chk.addEventListener('change', e => {
+          if (e.target.checked) state.services.add(e.target.value);
+          else state.services.delete(e.target.value);
+          calcAndRender();
+        });
+      });
+
+      if (elEquipInput) {
+        elEquipInput.addEventListener('input', e => {
+          const v = parseInt(e.target.value || '0', 10);
+          state.equipmentEstimate = isFinite(v) ? Math.max(0, v) : 0;
+          calcAndRender();
+        });
+      }
+
+      elAgree.addEventListener('change', calcAndRender);
+
+      // Submit: append summary fields to URL (optional)
+      elForm.addEventListener('submit', e => {
+        if (elSubmit.disabled) {
+          e.preventDefault();
+          alert('Please fill required fields and accept Terms to continue.');
+          return;
+        }
+        const url = new URL(elForm.action, window.location.origin);
+        url.searchParams.set('tourLabel', TOUR_LABEL[state.tour] || '');
+        url.searchParams.set('estimatedTotal', sTotal.textContent.replace(/[^\d]/g, ''));
+        url.searchParams.set('travelers', state.travelers);
+        url.searchParams.set('departureDate', state.departureDate);
+        url.searchParams.set('selectedServices', Array.from(state.services).join(','));
+        elForm.action = url.toString();
+      });
+
+      // Initial render
+      calcAndRender();
+
+      // Lazy-load images
+      document.querySelectorAll('img:not([loading])').forEach(img => img.setAttribute('loading', 'lazy'));
+    });
+  </script>
+</body>
+
+</html>

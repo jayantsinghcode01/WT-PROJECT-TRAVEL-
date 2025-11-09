@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Contact Adventure Tourism - Get in touch for custom tours, questions, or support. Multiple ways to reach our adventure experts.">
+  <title>Contact Us - Adventure Tourism</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+    .reveal--visible{opacity:1;transform:none}
+    .header.header--shadow{box-shadow:0 8px 24px rgba(0,0,0,.08);background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(8px)}
+    .back-to-top{position:fixed;right:1rem;bottom:1rem;z-index:50;border:none;border-radius:9999px;padding:.7rem 1rem;font:inherit;cursor:pointer;display:none}
+    .back-to-top--show{display:inline-flex}
+    .error{color:var(--color-danger, #dc2626); font-size:.9rem; margin-top:.35rem}
+    .field--invalid .form__input, .field--invalid .form__select, .field--invalid .form__textarea{outline:2px solid rgba(220,38,38,.4)}
+    .success-banner{background:rgba(16,185,129,.12);color:#065f46;border:1px solid rgba(16,185,129,.3);padding:1rem;border-radius:var(--border-radius-lg);margin-bottom:1rem;display:none}
+    .success-banner--show{display:block}
+    .copy-badge{cursor:pointer; display:inline-flex; align-items:center; gap:.35rem; padding:.25rem .5rem; border-radius:999px; background:var(--color-gray-100); font-size:.85rem}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  
+  <header class="header">
+    <nav class="container">
+      <div class="nav">
+        <a href="index.html" class="nav__logo">Adventure Tourism</a>
+        <ul class="nav__menu">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="destinations.html" class="nav__link">Destinations</a></li>
+          <li><a href="tours.html" class="nav__link">Tours</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+          <li><a href="blog.html" class="nav__link">Blog</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--active">Contact</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero reveal">
+      <div class="container">
+        <h1 class="hero__title">Contact Us</h1>
+        <p class="hero__subtitle">Ready to plan your next adventure? Get in touch with our expert team</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" id="contactApp">
+        <div class="grid grid--2" style="gap: 4rem; align-items: start;">
+          <!-- Contact Form -->
+          <div>
+            <h2 style="margin-bottom: 1rem;">Send Us a Message</h2>
+
+            <div id="successBanner" class="success-banner" role="status" aria-live="polite">
+              ✅ Thanks <strong id="sb-name"></strong> — your message was sent. We’ll reply at <strong id="sb-email"></strong>.
+            </div>
+
+            <form id="contactForm" class="form" method="post" action="#" novalidate>
+              <!-- Honeypot -->
+              <input type="text" name="company" id="company" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <div class="grid grid--2">
+                <div class="form__group" id="fg-first">
+                  <label for="first-name" class="form__label">First Name *</label>
+                  <input type="text" id="first-name" name="first-name" class="form__input" required minlength="2" v-model="firstName">
+                  <div class="error" v-if="touched.firstName && !firstName">First name is required.</div>
+                </div>
+                
+                <div class="form__group" id="fg-last">
+                  <label for="last-name" class="form__label">Last Name *</label>
+                  <input type="text" id="last-name" name="last-name" class="form__input" required minlength="2" v-model="lastName">
+                  <div class="error" v-if="touched.lastName && !lastName">Last name is required.</div>
+                </div>
+              </div>
+
+              <div class="form__group" id="fg-email">
+                <label for="email" class="form__label">Email Address *</label>
+                <input type="email" id="email" name="email" class="form__input" required v-model="email" placeholder="you@example.com">
+                <div class="error" v-if="touched.email && !isValidEmail">Enter a valid email.</div>
+              </div>
+
+              <div class="form__group">
+                <label for="phone" class="form__label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form__input" v-model="phone" placeholder="+91 98765 43210">
+              </div>
+
+              <div class="form__group" id="fg-type">
+                <label for="inquiry-type" class="form__label">Inquiry Type *</label>
+                <select id="inquiry-type" name="inquiry-type" class="form__select" required v-model="inquiryType">
+                  <option value="">Select inquiry type</option>
+                  <option value="tour-booking">Tour Booking</option>
+                  <option value="custom-itinerary">Custom Itinerary</option>
+                  <option value="group-booking">Group Booking</option>
+                  <option value="general-info">General Information</option>
+                  <option value="support">Customer Support</option>
+                  <option value="partnership">Partnership Inquiry</option>
+                </select>
+                <div class="error" v-if="touched.inquiryType && !inquiryType">Please select an inquiry type.</div>
+              </div>
+
+              <div class="form__group">
+                <label for="destination" class="form__label">Interested Destination(s)</label>
+                <input type="text" id="destination" name="destination" class="form__input" placeholder="e.g., Nepal, Kenya, Thailand" v-model="destination">
+              </div>
+
+              <div class="grid grid--2">
+                <div class="form__group">
+                  <label for="travel-date" class="form__label">Preferred Travel Date</label>
+                  <input type="date" id="travel-date" name="travel-date" class="form__input" v-model="travelDate">
+                </div>
+                
+                <div class="form__group">
+                  <label for="group-size" class="form__label">Group Size</label>
+                  <select id="group-size" name="group-size" class="form__select" v-model="groupSize">
+                    <option value="">Select group size</option>
+                    <option value="1">Solo traveler</option>
+                    <option value="2">2 people</option>
+                    <option value="3-5">3-5 people</option>
+                    <option value="6-10">6-10 people</option>
+                    <option value="10+">10+ people</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form__group" id="fg-message">
+                <label for="message" class="form__label">Message *</label>
+                <textarea id="message" name="message" class="form__textarea" rows="5" placeholder="Tell us about your adventure dreams, questions, or specific requirements..." required v-model="message" @input="updateCount"></textarea>
+                <div class="error" v-if="touched.message && !message">Message is required.</div>
+                <div style="text-align:right; font-size:.85rem; color:var(--color-gray-600)">{{ charCount }}/1000</div>
+              </div>
+
+              <div class="form__group">
+                <label style="display: flex; align-items: flex-start; gap: 1rem;">
+                  <input type="checkbox" name="newsletter" value="subscribe" style="margin-top: 0.25rem; flex-shrink: 0;" v-model="newsletter">
+                  <span>Subscribe to our newsletter for travel tips and special offers</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn--primary" style="width: 100%;" :disabled="submitting" @click.prevent="handleSubmit">
+                <span v-if="!submitting">Send Message</span>
+                <span v-else>Sending…</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="reveal">
+            <h2 style="margin-bottom: 2rem;">Get in Touch</h2>
+            
+            <div style="display: grid; gap: 2rem; margin-bottom: 3rem;">
+              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <div style="width: 3rem; height: 3rem; border-radius: 50%; background-color: var(--color-primary); color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem;">📧</div>
+                <div>
+                  <h3 style="margin-bottom: 0.5rem;">Email Us</h3>
+                  <p style="margin-bottom: 0.5rem;">
+                    <strong>General Inquiries:</strong><br>
+                    <a href="mailto:info@adventuretourism.com" class="copy-badge" data-copy="info@adventuretourism.com">info@adventuretourism.com</a>
+                  </p>
+                  <p style="margin-bottom: 0.5rem;">
+                    <strong>Bookings:</strong><br>
+                    <a href="mailto:bookings@adventuretourism.com" class="copy-badge" data-copy="bookings@adventuretourism.com">bookings@adventuretourism.com</a>
+                  </p>
+                  <p>
+                    <strong>Support:</strong><br>
+                    <a href="mailto:support@adventuretourism.com" class="copy-badge" data-copy="support@adventuretourism.com">support@adventuretourism.com</a>
+                  </p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <div style="width: 3rem; height: 3rem; border-radius: 50%; background-color: var(--color-secondary); color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem;">📞</div>
+                <div>
+                  <h3 style="margin-bottom: 0.5rem;">Call Us</h3>
+                  <p style="margin-bottom: 0.5rem;">
+                    <strong>Main Office:</strong><br>
+                    <a href="tel:+918510066465">+91 8510066465</a>
+                  </p>
+                  <p style="color: var(--color-gray-600); font-size: var(--font-size-sm);">Mon-Fri: 9AM-6PM IST<br>Sat-Sun: 10AM-4PM IST</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <div style="width: 3rem; height: 3rem; border-radius: 50%; background-color: var(--color-accent); color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem;">📍</div>
+                <div>
+                  <h3 style="margin-bottom: 0.5rem;">Visit Our Office</h3>
+                  <p style="margin-bottom: 0.5rem;">Faridabad<br>Haryana<br>India</p>
+                  <p style="color: var(--color-gray-600); font-size: var(--font-size-sm);">By appointment only</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <div style="width: 3rem; height: 3rem; border-radius: 50%; background-color: var(--color-success); color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem;">💬</div>
+                <div>
+                  <h3 style="margin-bottom: 0.5rem;">Live Chat</h3>
+                  <p style="margin-bottom: 0.5rem;">Available on our website</p>
+                  <p style="color: var(--color-gray-600); font-size: var(--font-size-sm);">Mon-Fri: 9AM-6PM IST<br>Average response: 2 minutes</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div style="background-color: var(--color-gray-200); height: 250px; border-radius: var(--border-radius-lg); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;" class="reveal">
+              <div style="text-align: center; color: var(--color-gray-600);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🗺️</div>
+                <p><strong>Interactive Map</strong><br>123 Adventure Street<br>Mountain View, CA</p>
+              </div>
+            </div>
+
+            <!-- Social Media -->
+            <div>
+              <h3 style="margin-bottom: 1rem;">Follow Our Adventures</h3>
+              <div style="display: flex; gap: 1rem;">
+                <a href="#" style="display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 50%; background-color: #1877f2; color: white; text-decoration: none;">f</a>
+                <a href="#" style="display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 50%; background-color: #1da1f2; color: white; text-decoration: none;">t</a>
+                <a href="#" style="display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 50%; background-color: #e4405f; color: white; text-decoration: none;">📷</a>
+                <a href="#" style="display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 50%; background-color: #ff0000; color: white; text-decoration: none;">▶</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section--gray reveal">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Frequently Asked Questions</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+          <div style="display: grid; gap: 2rem;">
+            <div style="background-color: var(--color-white); padding: 2rem; border-radius: var(--border-radius-lg);">
+              <h3 style="color: var(--color-primary); margin-bottom: 1rem;">How far in advance should I book my tour?</h3>
+              <p>We recommend booking 2-3 months in advance for popular destinations like Everest Base Camp or during peak seasons. However, we can often accommodate last-minute bookings depending on availability.</p>
+            </div>
+            <div style="background-color: var(--color-white); padding: 2rem; border-radius: var(--border-radius-lg);">
+              <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Do you offer custom itineraries?</h3>
+              <p>Absolutely! Our custom itinerary service is one of our specialties. We work with you to create a personalized adventure that matches your interests, fitness level, budget, and timeline.</p>
+            </div>
+            <div style="background-color: var(--color-white); padding: 2rem; border-radius: var(--border-radius-lg);">
+              <h3 style="color: var(--color-primary); margin-bottom: 1rem;">What's included in your tour packages?</h3>
+              <p>Our packages typically include accommodation, meals during the trek, expert guides, permits, and airport transfers. Specific inclusions vary by tour - check individual tour pages for detailed information.</p>
+            </div>
+            <div style="background-color: var(--color-white); padding: 2rem; border-radius: var(--border-radius-lg);">
+              <h3 style="color: var(--color-primary); margin-bottom: 1rem;">What if I need to cancel my booking?</h3>
+              <p>We understand plans can change. Our cancellation policy varies by tour and timing. Generally, cancellations 60+ days before departure receive full refunds minus processing fees. Contact us for specific details.</p>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 2rem;">
+            <a href="faq.html" class="btn btn--outline">View All FAQs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div style="text-align: center; background-color: var(--color-primary); color: white; padding: 3rem; border-radius: var(--border-radius-lg);">
+          <h2 style="color: white; margin-bottom: 1rem;">We're Here to Help</h2>
+          <p style="font-size: var(--font-size-lg); margin-bottom: 2rem; opacity: 0.9;">Our adventure experts typically respond to inquiries within 2-4 hours during business hours.</p>
+          <div class="stats" style="color: white;">
+            <div>
+              <div class="stat__number" style="color: white;">&lt; 2 hrs</div>
+              <div class="stat__label" style="color: white; opacity: 0.9;">Average Response Time</div>
+            </div>
+            <div>
+              <div class="stat__number" style="color: white;">24/7</div>
+              <div class="stat__label" style="color: white; opacity: 0.9;">Emergency Support</div>
+            </div>
+            <div>
+              <div class="stat__number" style="color: white;">15+</div>
+              <div class="stat__label" style="color: white; opacity: 0.9;">Languages Supported</div>
+            </div>
+            <div>
+              <div class="stat__number" style="color: white;">98%</div>
+              <div class="stat__label" style="color: white; opacity: 0.9;">Customer Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3>Adventure Tourism</h3>
+          <p>Creating unforgettable adventures and connecting travelers with extraordinary destinations around the world.</p>
+        </div>
+        <div class="footer__section">
+          <h3>Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h3>Services</h3>
+          <ul class="footer__links">
+            <li><a href="services.html">Custom Itineraries</a></li>
+            <li><a href="services.html">Expert Guides</a></li>
+            <li><a href="services.html">Travel Insurance</a></li>
+            <li><a href="services.html">Airport Transfers</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h3>Contact</h3>
+          <p>📧 vardanrajput412@gmail.com</p>
+          <p>📞 +91 8510066465</p>
+          <p>📍 Faridabad Haryana 121004</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Adventure Tourism. All rights reserved. | Privacy Policy | Terms of Service</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vue -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+  <script>
+  // Vue app for form logic
+  const app = Vue.createApp({
+    data(){return{
+      firstName:'', lastName:'', email:'', phone:'',
+      inquiryType:'', destination:'', travelDate:'', groupSize:'',
+      message:'', newsletter:false, submitting:false,
+      touched:{firstName:false,lastName:false,email:false,inquiryType:false,message:false},
+      charCount:0, lastSubmitTime:0
+    }},
+    computed:{
+      isValidEmail(){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email||''); },
+      formValid(){
+        return this.firstName && this.lastName && this.isValidEmail && this.inquiryType && this.message;
+      }
+    },
+    methods:{
+      updateCount(){ this.charCount = (this.message||'').length; },
+      handleSubmit(){
+        // spam guard: honeypot or quick re-submit
+        const hp = document.getElementById('company');
+        const now = Date.now();
+        if ((hp && hp.value.trim().length) || (now - this.lastSubmitTime < 2000)) return;
+        this.lastSubmitTime = now;
+
+        // touch fields to show errors
+        this.touched.firstName = true; this.touched.lastName = true; this.touched.email = true; this.touched.inquiryType = true; this.touched.message = true;
+
+        // basic date guard
+        const td = document.getElementById('travel-date');
+        if (td && td.value && td.min && td.value < td.min) {
+          alert('Please select a future travel date.'); return;
+        }
+
+        if (!this.formValid){ return; }
+        this.submitting = true;
+
+        // Simulate async submit
+        setTimeout(()=>{
+          this.submitting = false;
+          // show success banner
+          const sb = document.getElementById('successBanner');
+          document.getElementById('sb-name').textContent = this.firstName.trim();
+          document.getElementById('sb-email').textContent = this.email.trim();
+          sb.classList.add('success-banner--show');
+
+          // reset form
+          this.message=''; this.charCount=0;
+          // optionally keep contact info so user sees what they sent
+          // this.firstName=''; this.lastName=''; this.email=''; this.phone='';
+        }, 700);
+      }
+    },
+    mounted(){
+      this.updateCount();
+      // Min travel date: today
+      const t = document.getElementById('travel-date');
+      if (t) t.min = new Date().toISOString().slice(0,10);
+    }
+  });
+  app.mount('#contactApp');
+
+  // Shell enhancements (non-Vue)
+  (function(){
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Sticky header shadow
+    const header = document.querySelector('.header');
+    const headerShadow = ()=>{ if(window.scrollY>8) header.classList.add('header--shadow'); else header.classList.remove('header--shadow'); };
+    headerShadow(); window.addEventListener('scroll', headerShadow, {passive:true});
+
+    // Mobile menu
+    const navToggle = document.querySelector('.nav__toggle');
+    const navMenu = document.querySelector('.nav__menu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', ()=>navMenu.classList.toggle('nav__menu--open'));
+      document.addEventListener('keydown', e=>{ if(e.key==='Escape') navMenu.classList.remove('nav__menu--open'); });
+      document.addEventListener('click', e=>{
+        if(!navMenu.classList.contains('nav__menu--open')) return;
+        const within = navMenu.contains(e.target)||navToggle.contains(e.target);
+        if(!within) navMenu.classList.remove('nav__menu--open');
+      });
+    }
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries,obs)=>{
+        entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('reveal--visible'); obs.unobserve(en.target);} });
+      }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+      reveals.forEach(el=>io.observe(el));
+    } else { reveals.forEach(el=>el.classList.add('reveal--visible')); }
+
+    // Back to top
+    const backBtn = document.createElement('button');
+    backBtn.className='back-to-top'; backBtn.setAttribute('aria-label','Back to top'); backBtn.textContent='↑ Top';
+    document.body.appendChild(backBtn);
+    const toggleBack = ()=>{ if(window.scrollY>600) backBtn.classList.add('back-to-top--show'); else backBtn.classList.remove('back-to-top--show'); };
+    toggleBack(); window.addEventListener('scroll', toggleBack, {passive:true});
+    backBtn.addEventListener('click', ()=>window.scrollTo({top:0, behavior: prefersReducedMotion ? 'auto' : 'smooth'}));
+
+    // Lazy-load images
+    document.querySelectorAll('img:not([loading])').forEach(img => img.setAttribute('loading','lazy'));
+
+    // Copy-to-clipboard on email badges
+    document.querySelectorAll('.copy-badge').forEach(el=>{
+      el.addEventListener('click', async (e)=>{
+        e.preventDefault();
+        const text = el.getAttribute('data-copy') || el.textContent.trim();
+        try { await navigator.clipboard.writeText(text); el.textContent='Copied!'; setTimeout(()=>el.textContent=text,1200); } catch(_){}
+      });
+    });
+
+    // Animated counters in CTA stats
+    const counters = document.querySelectorAll('.stat__number');
+    if ('IntersectionObserver' in window) {
+      const fmt = new Intl.NumberFormat('en-IN');
+      const run = (el) => {
+        const raw = el.textContent.trim();
+        if (raw.includes('%') || raw.includes('/')) return; // don't animate complex strings
+        if (raw.includes('<')) return; // keep "< 2 hrs"
+        const target = parseInt(raw.replace(/[^\d]/g,''),10);
+        if (!isFinite(target) || target<=0) return;
+        const start = performance.now(), dur = 1200;
+        const step = (t)=>{
+          const p = Math.min(1,(t-start)/dur);
+          const val = Math.floor(target * (prefersReducedMotion ? 1 : p));
+          el.textContent = fmt.format(val) + (raw.endsWith('+')?'+':'');
+          if (p<1 && !prefersReducedMotion) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      };
+      const io = new IntersectionObserver((ents,obs)=>{
+        ents.forEach(en=>{ if(en.isIntersecting){ run(en.target); obs.unobserve(en.target);} });
+      }, {threshold:.5});
+      counters.forEach(c=>io.observe(c));
+    }
+  })();
+  </script>
+</body>
+</html>

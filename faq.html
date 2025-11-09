@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently Asked Questions about Adventure Tourism - Find answers to common questions about bookings, tours, safety, and travel requirements.">
+    <title>FAQ - Adventure Tourism</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <nav class="container">
+            <div class="nav">
+                <a href="index.html" class="nav__logo">Adventure Tourism</a>
+                <ul class="nav__menu">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li><a href="destinations.html" class="nav__link">Destinations</a></li>
+                    <li><a href="tours.html" class="nav__link">Tours</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+                    <li><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+                <button class="nav__toggle" aria-label="Toggle navigation menu">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">Frequently Asked Questions</h1>
+                <p class="hero__subtitle">Find answers to common questions about our tours, booking process, and adventure travel</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <!-- Search FAQ -->
+                    <div style="margin-bottom: 3rem;">
+                        <div class="search">
+                            <form class="search__form" role="search" aria-label="Search FAQ">
+                                <input type="search" class="search__input" placeholder="Search frequently asked questions..." aria-label="FAQ search">
+                                <button type="submit" class="search__btn">Search</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Categories -->
+                    <div class="filters" style="margin-bottom: 3rem;">
+                        <button class="filter filter--active" data-category="all">All Questions</button>
+                        <button class="filter" data-category="booking">Booking</button>
+                        <button class="filter" data-category="tours">Tours</button>
+                        <button class="filter" data-category="safety">Safety</button>
+                        <button class="filter" data-category="travel">Travel Requirements</button>
+                        <button class="filter" data-category="payment">Payment</button>
+                    </div>
+
+                    <!-- FAQ Items -->
+                    <div style="display: grid; gap: 1rem;">
+                        <!-- Booking Questions -->
+                        <div class="card" data-category="booking">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    How far in advance should I book my tour? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>We recommend booking 2-3 months in advance for popular destinations like Everest Base Camp, especially during peak seasons (March-May and September-November). For less popular routes or off-season travel, 4-6 weeks is usually sufficient. However, we can often accommodate last-minute bookings depending on availability.</p>
+                                    <p>Early booking advantages include:</p>
+                                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                                        <li>Better accommodation options</li>
+                                        <li>Preferred departure dates</li>
+                                        <li>Early bird discounts (up to $200 off)</li>
+                                        <li>More time for physical preparation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" data-category="booking">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    What is your cancellation policy? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>Our cancellation policy varies by tour and timing:</p>
+                                    <ul style="margin-left: 1.5rem; margin: 1rem 0;">
+                                        <li><strong>60+ days before departure:</strong> Full refund minus $100 processing fee</li>
+                                        <li><strong>30-59 days:</strong> 75% refund</li>
+                                        <li><strong>15-29 days:</strong> 50% refund</li>
+                                        <li><strong>Less than 15 days:</strong> 25% refund</li>
+                                    </ul>
+                                    <p>We strongly recommend purchasing travel insurance to protect against unforeseen circumstances. Medical emergencies and natural disasters may qualify for different terms.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" data-category="booking">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    Can I book a tour for just myself (solo traveler)? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>Absolutely! We welcome solo travelers and have many single adventurers join our group tours. Solo travelers often find our tours a great way to meet like-minded people and make lasting friendships.</p>
+                                    <p>Solo traveler considerations:</p>
+                                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                                        <li>Single room supplements may apply</li>
+                                        <li>Option to share accommodation to reduce costs</li>
+                                        <li>Private guide services available</li>
+                                        <li>Special support for first-time solo travelers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tours Questions -->
+                        <div class="card" data-category="tours">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    What's included in your tour packages? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>Our tour packages typically include:</p>
+                                    <ul style="margin-left: 1.5rem; margin: 1rem 0;">
+                                        <li>Expert English-speaking guide</li>
+                                        <li>Accommodation as specified in itinerary</li>
+                                        <li>All meals during trekking portions</li>
+                                        <li>Airport transfers</li>
+                                        <li>Required permits and entrance fees</li>
+                                        <li>Porter services (where applicable)</li>
+                                        <li>Group medical kit</li>
+                                    </ul>
+                                    <p><strong>Not included:</strong> International flights, visa fees, travel insurance, personal equipment, tips, and meals in cities (unless specified).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" data-category="tours">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    Do you offer custom itineraries? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>Yes! Custom itinerary planning is one of our specialties. We work closely with you to create a personalized adventure that matches your interests, fitness level, budget, and timeline.</p>
+                                    <p>Custom tour process:</p>
+                                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                                        <li>Initial consultation to understand your preferences</li>
+                                        <li>Detailed itinerary proposal with options</li>
+                                        <li>Revisions based on your feedback</li>
+                                        <li>Final booking and preparation support</li>
+                                    </ul>
+                                    <p>Custom tours start at $150 planning fee, which is credited toward your final booking.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" data-category="tours">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    What is the maximum group size? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>We keep our groups small to ensure personalized attention and minimal environmental impact:</p>
+                                    <ul style="margin-left: 1.5rem; margin: 1rem 0;">
+                                        <li><strong>Trekking tours:</strong> Maximum 12 people</li>
+                                        <li><strong>Safari tours:</strong> Maximum 8 people per vehicle</li>
+                                        <li><strong>Cultural tours:</strong> Maximum 15 people</li>
+                                        <li><strong>Beach adventures:</strong> Maximum 10 people</li>
+                                    </ul>
+                                    <p>Smaller groups allow for more flexibility, better wildlife viewing opportunities, and stronger connections with local communities.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Safety Questions -->
+                        <div class="card" data-category="safety">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    How do you ensure safety during adventures? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>Safety is our top priority. Our comprehensive safety measures include:</p>
+                                    <ul style="margin-left: 1.5rem; margin: 1rem 0;">
+                                        <li>Certified guides with wilderness first aid training</li>
+                                        <li>Regular safety briefings and equipment checks</li>
+                                        <li>Emergency communication devices (satellite phones)</li>
+                                        <li>Comprehensive medical kits and emergency oxygen</li>
+                                        <li>Established evacuation procedures</li>
+                                        <li>24/7 emergency support team</li>
+                                        <li>Regular weather monitoring and route adjustments</li>
+                                    </ul>
+                                    <p>All guides undergo annual safety training and certification updates.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" data-category="safety">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    What happens if I get altitude sickness? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>Altitude sickness is a serious concern on high-altitude treks. Our prevention and response protocol includes:</p>
+                                    <ul style="margin-left: 1.5rem; margin: 1rem 0;">
+                                        <li>Gradual ascent profiles with proper acclimatization days</li>
+                                        <li>Daily health checks by guides</li>
+                                        <li>Emergency oxygen and medical supplies</li>
+                                        <li>Immediate descent if symptoms worsen</li>
+                                        <li>Helicopter evacuation insurance coverage</li>
+                                    </ul>
+                                    <p><strong>Warning signs:</strong> Severe headache, nausea, confusion, difficulty walking. If you experience these symptoms, inform your guide immediately.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" data-category="safety">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    Is travel insurance required? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>Yes, comprehensive travel insurance is mandatory for all our adventure tours. Your insurance must cover:</p>
+                                    <ul style="margin-left: 1.5rem; margin: 1rem 0;">
+                                        <li>Adventure sports and high-altitude activities</li>
+                                        <li>Emergency medical treatment and evacuation</li>
+                                        <li>Helicopter rescue (up to 6,000m for Himalayan treks)</li>
+                                        <li>Trip cancellation and interruption</li>
+                                        <li>Personal belongings and equipment</li>
+                                    </ul>
+                                    <p>We can recommend suitable insurance providers or you can purchase through our partner for $125-250 depending on trip value and duration.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Travel Requirements -->
+                        <div class="card" data-category="travel">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    What documents do I need for international travel? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>Required documents vary by destination, but generally include:</p>
+                                    <ul style="margin-left: 1.5rem; margin: 1rem 0;">
+                                        <li><strong>Passport:</strong> Valid for at least 6 months beyond travel date</li>
+                                        <li><strong>Visa:</strong> Required for most destinations (we provide guidance)</li>
+                                        <li><strong>Permits:</strong> Special permits for restricted areas (we handle these)</li>
+                                        <li><strong>Vaccinations:</strong> Yellow fever, hepatitis, etc. as required</li>
+                                        <li><strong>Travel insurance:</strong> Proof of coverage required</li>
+                                    </ul>
+                                    <p>We provide detailed document checklists 60 days before departure and assist with permit applications.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" data-category="travel">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    What vaccinations do I need? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>Vaccination requirements depend on your destination and personal medical history. Common recommendations include:</p>
+                                    <ul style="margin-left: 1.5rem; margin: 1rem 0;">
+                                        <li><strong>Routine vaccines:</strong> MMR, DPT, flu, COVID-19</li>
+                                        <li><strong>Hepatitis A & B:</strong> Recommended for most destinations</li>
+                                        <li><strong>Typhoid:</strong> For areas with poor sanitation</li>
+                                        <li><strong>Japanese Encephalitis:</strong> For rural Asia travel</li>
+                                        <li><strong>Yellow Fever:</strong> Required for some African destinations</li>
+                                    </ul>
+                                    <p>Consult a travel medicine specialist 4-6 weeks before departure. We provide destination-specific health information with your booking confirmation.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" data-category="travel">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    What should I pack for my adventure? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>We provide detailed packing lists specific to each tour, but essential items include:</p>
+                                    <ul style="margin-left: 1.5rem; margin: 1rem 0;">
+                                        <li><strong>Clothing:</strong> Layering system, waterproof jacket, warm layers</li>
+                                        <li><strong>Footwear:</strong> Sturdy hiking boots, comfortable camp shoes</li>
+                                        <li><strong>Accessories:</strong> Sun hat, warm hat, gloves, sunglasses</li>
+                                        <li><strong>Personal items:</strong> Sunscreen, first aid supplies, medications</li>
+                                        <li><strong>Electronics:</strong> Camera, power bank, headlamp</li>
+                                    </ul>
+                                    <p>Equipment rental is available in most destinations. We'll send a comprehensive packing list 45 days before departure.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Questions -->
+                        <div class="card" data-category="payment">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    What payment methods do you accept? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>We accept multiple payment methods for your convenience:</p>
+                                    <ul style="margin-left: 1.5rem; margin: 1rem 0;">
+                                        <li><strong>Credit Cards:</strong> Visa, MasterCard, American Express</li>
+                                        <li><strong>Bank Transfer:</strong> Wire transfer for large amounts</li>
+                                        <li><strong>PayPal:</strong> Secure online payments</li>
+                                        <li><strong>Check:</strong> Personal or cashier's check (US only)</li>
+                                    </ul>
+                                    <p>Payment schedule: 30% deposit to secure booking, balance due 45 days before departure. Payment plans available for tours over $3,000.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" data-category="payment">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    Do you offer payment plans? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>Yes! We offer flexible payment plans for tours over $3,000:</p>
+                                    <ul style="margin-left: 1.5rem; margin: 1rem 0;">
+                                        <li><strong>3-month plan:</strong> 30% deposit, 35% at 60 days, 35% at 30 days</li>
+                                        <li><strong>6-month plan:</strong> 25% deposit, then 25% monthly for 3 months</li>
+                                        <li><strong>Custom plans:</strong> Available for early bookings (6+ months)</li>
+                                    </ul>
+                                    <p>No interest charges for payment plans. Final payment must be completed 30 days before departure. Contact us to set up a payment plan.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" data-category="payment">
+                            <div class="card__content">
+                                <h3 style="color: var(--color-primary); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                                    Are there any hidden fees? <span style="float: right;">+</span>
+                                </h3>
+                                <div style="display: none;" class="faq-answer">
+                                    <p>No hidden fees! Our pricing is transparent and includes all advertised services. The only additional costs are:</p>
+                                    <ul style="margin-left: 1.5rem; margin: 1rem 0;">
+                                        <li><strong>Optional services:</strong> Single room supplements, equipment rental</li>
+                                        <li><strong>Personal expenses:</strong> Souvenirs, extra meals, drinks</li>
+                                        <li><strong>Tips:</strong> For guides and porters (recommended amounts provided)</li>
+                                        <li><strong>Travel insurance:</strong> If not already covered</li>
+                                    </ul>
+                                    <p>All potential additional costs are clearly outlined in your booking confirmation and pre-departure information.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Still Have Questions -->
+                    <div style="text-align: center; margin-top: 4rem; padding: 3rem; background-color: var(--color-gray-50); border-radius: var(--border-radius-lg);">
+                        <h2>Still Have Questions?</h2>
+                        <p style="font-size: var(--font-size-lg); margin-bottom: 2rem;">Our adventure experts are here to help you plan the perfect trip.</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                            <a href="contact.html" class="btn btn--primary">Contact Us</a>
+                            <a href="tel:+15551234567" class="btn btn--outline">Call Now</a>
+                        </div>
+                        <p style="margin-top: 1rem; color: var(--color-gray-600);">Average response time: 2-4 hours during business hours</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Adventure Tourism</h3>
+                    <p>Creating unforgettable adventures and connecting travelers with extraordinary destinations around the world.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Services</h3>
+                    <ul class="footer__links">
+                        <li><a href="services.html">Custom Itineraries</a></li>
+                        <li><a href="services.html">Expert Guides</a></li>
+                        <li><a href="services.html">Travel Insurance</a></li>
+                        <li><a href="services.html">Airport Transfers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Contact</h3>
+                  <p>📧 vardanrajput412@gmail.com </p>
+                    <p>📞 +91 8510066465</p>
+                    <p>📍Faridabad Haryana 121004 India</p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 Adventure Tourism. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span');
+            
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+                icon.textContent = '−';
+            } else {
+                answer.style.display = 'none';
+                icon.textContent = '+';
+            }
+        }
+    </script>
+</body>
+</html>

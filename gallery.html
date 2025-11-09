@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Photo gallery showcasing stunning destinations and adventures from around the world with Adventure Tourism.">
+    <title>Photo Gallery - Adventure Tourism</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <nav class="container">
+            <div class="nav">
+                <a href="index.html" class="nav__logo">Adventure Tourism</a>
+                <ul class="nav__menu">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li><a href="destinations.html" class="nav__link">Destinations</a></li>
+                    <li><a href="tours.html" class="nav__link">Tours</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="gallery.html" class="nav__link nav__link--active">Gallery</a></li>
+                    <li><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+                <button class="nav__toggle" aria-label="Toggle navigation menu">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">Photo Gallery</h1>
+                <p class="hero__subtitle">Discover the beauty and wonder of our adventures through stunning photography from around the world</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="filters" style="margin-bottom: 3rem;">
+                    <button class="filter filter--active" data-category="all">All Photos</button>
+                    <button class="filter" data-category="mountains">Mountains</button>
+                    <button class="filter" data-category="wildlife">Wildlife</button>
+                    <button class="filter" data-category="beaches">Beaches</button>
+                    <button class="filter" data-category="cultural">Cultural</button>
+                    <button class="filter" data-category="adventure">Adventure</button>
+                </div>
+
+                <div class="gallery">
+                    <!-- Mountains Category -->
+                    <a href="#photo1" class="gallery__item" data-category="mountains adventure">
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Snow-capped Himalayan peaks with colorful prayer flags" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Himalayan Peaks</h4>
+                        </div>
+                    </a>
+
+                    <a href="#photo2" class="gallery__item" data-category="mountains">
+                        <img src="https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dramatic granite peaks reflected in pristine mountain lake in Patagonia" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Patagonia Reflections</h4>
+                        </div>
+                    </a>
+
+                    <a href="#photo3" class="gallery__item" data-category="mountains adventure">
+                        <img src="https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Alpine meadow with wildflowers and snow-capped Swiss peaks" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Swiss Alpine Glory</h4>
+                        </div>
+                    </a>
+
+                    <a href="#photo4" class="gallery__item" data-category="mountains adventure">
+                        <img src="https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ancient Inca ruins of Machu Picchu shrouded in morning mist" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Machu Picchu Sunrise</h4>
+                        </div>
+                    </a>
+
+                    <!-- Wildlife Category -->
+                    <a href="#photo5" class="gallery__item" data-category="wildlife">
+                        <img src="https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Elephant family crossing African savanna with acacia trees" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">African Elephants</h4>
+                        </div>
+                    </a>
+
+                    <a href="#photo6" class="gallery__item" data-category="wildlife">
+                        <img src="https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Colorful macaws in lush Amazon rainforest canopy" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Amazon Wildlife</h4>
+                        </div>
+                    </a>
+
+                    <a href="#photo7" class="gallery__item" data-category="wildlife">
+                        <img src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Majestic lion resting under acacia tree in golden savanna light" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">King of the Savanna</h4>
+                        </div>
+                    </a>
+
+                    <!-- Beaches Category -->
+                    <a href="#photo8" class="gallery__item" data-category="beaches">
+                        <img src="https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Crystal clear turquoise water with traditional longtail boats in Thailand" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Thai Paradise</h4>
+                        </div>
+                    </a>
+
+                    <a href="#photo9" class="gallery__item" data-category="beaches">
+                        <img src="https://images.pexels.com/photos/3571551/pexels-photo-3571551.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Overwater bungalows in Maldives with turquoise lagoon" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Maldives Luxury</h4>
+                        </div>
+                    </a>
+
+                    <a href="#photo10" class="gallery__item" data-category="beaches">
+                        <img src="https://images.pexels.com/photos/2587056/pexels-photo-2587056.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pristine Caribbean beach with palm trees and crystal blue water" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Caribbean Dreams</h4>
+                        </div>
+                    </a>
+
+                    <!-- Cultural Category -->
+                    <a href="#photo11" class="gallery__item" data-category="cultural">
+                        <img src="https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Traditional Nepalese temple with intricate wooden architecture" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Nepal Heritage</h4>
+                        </div>
+                    </a>
+
+                    <a href="#photo12" class="gallery__item" data-category="cultural">
+                        <img src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Japanese temple pagoda surrounded by cherry blossoms" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Cherry Blossom Temple</h4>
+                        </div>
+                    </a>
+
+                    <a href="#photo13" class="gallery__item" data-category="cultural">
+                        <img src="https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Colorful spices and textiles at traditional market" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Market Colors</h4>
+                        </div>
+                    </a>
+
+                    <!-- Adventure Category -->
+                    <a href="#photo14" class="gallery__item" data-category="adventure">
+                        <img src="https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Northern lights aurora borealis over snowy landscape" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Northern Lights</h4>
+                        </div>
+                    </a>
+
+                    <a href="#photo15" class="gallery__item" data-category="adventure">
+                        <img src="https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Trekkers celebrating at mountain summit with spectacular view" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Summit Victory</h4>
+                        </div>
+                    </a>
+
+                    <a href="#photo16" class="gallery__item" data-category="adventure beaches">
+                        <img src="https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sydney Harbour Bridge and Opera House at sunset" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Sydney Icons</h4>
+                        </div>
+                    </a>
+
+                    <!-- Additional photos for variety -->
+                    <a href="#photo17" class="gallery__item" data-category="mountains">
+                        <img src="https://images.pexels.com/photos/1766838/pexels-photo-1766838.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Mountain lake reflection with dramatic peaks at sunrise" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Dawn Reflection</h4>
+                        </div>
+                    </a>
+
+                    <a href="#photo18" class="gallery__item" data-category="adventure">
+                        <img src="https://images.pexels.com/photos/2406949/pexels-photo-2406949.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Adventure kayaking through dramatic canyon waterways" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Canyon Adventure</h4>
+                        </div>
+                    </a>
+
+                    <a href="#photo19" class="gallery__item" data-category="wildlife">
+                        <img src="https://images.pexels.com/photos/1234567/pexels-photo-1234567.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Whale watching in pristine ocean waters" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Marine Giants</h4>
+                        </div>
+                    </a>
+
+                    <a href="#photo20" class="gallery__item" data-category="cultural">
+                        <img src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Traditional festival with colorful costumes and dancing" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <h4 class="gallery__title">Cultural Festival</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;">
+                    <h3 style="margin-bottom: 1rem;">Want to Create Your Own Adventure Photos?</h3>
+                    <p style="font-size: var(--font-size-lg); margin-bottom: 2rem;">Join us on one of our incredible journeys and capture memories that will last a lifetime.</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="tours.html" class="btn btn--primary">Browse Tours</a>
+                        <a href="contact.html" class="btn btn--outline">Plan Custom Trip</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Modals -->
+        <div class="modal" id="photo1">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Majestic snow-capped Himalayan peaks with colorful Buddhist prayer flags fluttering in the mountain breeze" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo2">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Dramatic granite peaks of Patagonia perfectly reflected in pristine mountain lake at golden hour" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo3">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Swiss alpine meadow filled with colorful wildflowers with majestic snow-capped peaks in the background" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo4">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Ancient Inca ruins of Machu Picchu mysteriously shrouded in morning mist with Huayna Picchu peak rising behind" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo5">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="African elephant family gracefully crossing the golden savanna with iconic acacia trees silhouetted against the sunset" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo6">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Vibrant scarlet macaws perched in the lush green canopy of the Amazon rainforest displaying brilliant plumage" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo7">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Majestic male lion resting peacefully under the shade of an acacia tree bathed in golden African sunlight" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo8">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Crystal clear turquoise waters of Thailand with traditional longtail boats anchored near limestone karst formations" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo9">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/3571551/pexels-photo-3571551.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Luxury overwater bungalows in the Maldives surrounded by pristine turquoise lagoon and coral atolls" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo10">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/2587056/pexels-photo-2587056.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Pristine Caribbean beach with swaying palm trees and crystal clear azure waters perfect for tropical paradise dreams" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo11">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Traditional Nepalese temple with intricate wooden architecture and carved details showcasing centuries-old craftsmanship" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo12">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Japanese temple pagoda elegantly surrounded by delicate pink cherry blossoms during the magical sakura season" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo13">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Vibrant display of colorful spices, textiles and traditional handicrafts at a bustling local market" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo14">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Spectacular northern lights aurora borealis dancing across the dark Arctic sky over a snow-covered landscape" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo15">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Triumphant group of trekkers celebrating their achievement at a spectacular mountain summit viewpoint with arms raised in victory" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo16">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Iconic Sydney Harbour Bridge and Opera House illuminated against the warm glow of a spectacular sunset over the harbor" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo17">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/1766838/pexels-photo-1766838.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Perfect mirror reflection of dramatic mountain peaks in a pristine alpine lake during the magical golden hour of sunrise" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo18">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/2406949/pexels-photo-2406949.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Adventure kayaking expedition navigating through dramatic canyon waterways with towering red rock walls on either side" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo19">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/1234567/pexels-photo-1234567.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Magnificent whale breaching the surface of pristine ocean waters during an unforgettable marine wildlife encounter" class="modal__image">
+            </div>
+        </div>
+
+        <div class="modal" id="photo20">
+            <div class="modal__content">
+                <a href="#" class="modal__close">&times;</a>
+                <img src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Traditional cultural festival celebration with performers in vibrant colorful costumes dancing in authentic regional attire" class="modal__image">
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Adventure Tourism</h3>
+                    <p>Creating unforgettable adventures and connecting travelers with extraordinary destinations around the world.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Services</h3>
+                    <ul class="footer__links">
+                        <li><a href="services.html">Custom Itineraries</a></li>
+                        <li><a href="services.html">Expert Guides</a></li>
+                        <li><a href="services.html">Travel Insurance</a></li>
+                        <li><a href="services.html">Airport Transfers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Contact</h3>
+                     <p>📧 vardanrajput412@gmail.com </p>
+                    <p>📞 +91 8510066465</p>
+                    <p>📍Faridabad Haryana 121004 India</p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 Adventure Tourism. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

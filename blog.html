@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Adventure Tourism blog - Travel tips, destination guides, and inspiring stories from our adventures around the world.">
+    <title>Blog - Adventure Tourism</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <nav class="container">
+            <div class="nav">
+                <a href="index.html" class="nav__logo">Adventure Tourism</a>
+                <ul class="nav__menu">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li><a href="destinations.html" class="nav__link">Destinations</a></li>
+                    <li><a href="tours.html" class="nav__link">Tours</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+                    <li><a href="blog.html" class="nav__link nav__link--active">Blog</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+                <button class="nav__toggle" aria-label="Toggle navigation menu">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">Adventure Blog</h1>
+                <p class="hero__subtitle">Travel tips, destination guides, and inspiring stories from our adventures around the world</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="filters" style="margin-bottom: 3rem;">
+                    <button class="filter filter--active" data-category="all">All Posts</button>
+                    <button class="filter" data-category="tips">Travel Tips</button>
+                    <button class="filter" data-category="guides">Destination Guides</button>
+                    <button class="filter" data-category="stories">Adventure Stories</button>
+                    <button class="filter" data-category="culture">Culture</button>
+                    <button class="filter" data-category="gear">Gear Reviews</button>
+                </div>
+
+                <div class="grid grid--3">
+                    <!-- Featured Blog Post -->
+                    <article class="card" data-category="guides" style="grid-column: span 2; grid-row: span 2;" data-featured="true">
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trekker on mountain trail with Himalayan peaks in background" class="card__image" style="height: 300px;">
+                        <div class="card__content">
+                            <div style="background-color: var(--color-primary); color: white; padding: 0.25rem 0.75rem; border-radius: var(--border-radius); font-size: var(--font-size-sm); font-weight: 600; display: inline-block; margin-bottom: 1rem;">Featured</div>
+                            <h3 class="card__title" style="font-size: var(--font-size-2xl);">The Complete Guide to Trekking in the Himalayas</h3>
+                            <div class="card__meta">
+                                <span>📅 Dec 10, 2024</span>
+                                <span>👤 Sarah Mitchell</span>
+                                <span>⏱️ 12 min read</span>
+                            </div>
+                            <p class="card__description">Everything you need to know about planning your Himalayan adventure, from physical preparation and gear selection to cultural etiquette and safety considerations. Our comprehensive guide covers all major trekking routes in Nepal, including Everest Base Camp, Annapurna Circuit, and lesser-known hidden gems.</p>
+                            <a href="blog-post.html" class="btn btn--primary">Read Full Article</a>
+                        </div>
+                    </article>
+
+                    <!-- Regular Blog Posts -->
+                    <article class="card" data-category="tips">
+                        <img src="https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Safari equipment and camera gear laid out on African map" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Essential Safari Photography Tips</h3>
+                            <div class="card__meta">
+                                <span>📅 Dec 8, 2024</span>
+                                <span>👤 David Chen</span>
+                                <span>⏱️ 6 min read</span>
+                            </div>
+                            <p class="card__description">Capture stunning wildlife photos on your African safari with these professional photography tips and camera settings.</p>
+                            <a href="blog-post.html" class="btn btn--primary">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="culture">
+                        <img src="https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Traditional Nepalese temple ceremony with monks and locals" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Understanding Sherpa Culture</h3>
+                            <div class="card__meta">
+                                <span>📅 Dec 5, 2024</span>
+                                <span>👤 Maria Rodriguez</span>
+                                <span>⏱️ 8 min read</span>
+                            </div>
+                            <p class="card__description">Dive deep into the rich traditions and customs of the Sherpa people of the Himalayas.</p>
+                            <a href="blog-post.html" class="btn btn--primary">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="stories">
+                        <img src="https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Group of adventurers celebrating at mountain summit" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">My First Everest Base Camp Trek</h3>
+                            <div class="card__meta">
+                                <span>📅 Dec 3, 2024</span>
+                                <span>👤 Guest Writer</span>
+                                <span>⏱️ 10 min read</span>
+                            </div>
+                            <p class="card__description">A personal account of the challenges and triumphs of reaching Everest Base Camp for the first time.</p>
+                            <a href="blog-post.html" class="btn btn--primary">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="tips">
+                        <img src="https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tropical beach packing essentials laid out on sand" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Ultimate Tropical Packing Guide</h3>
+                            <div class="card__meta">
+                                <span>📅 Dec 1, 2024</span>
+                                <span>👤 Emma Thompson</span>
+                                <span>⏱️ 5 min read</span>
+                            </div>
+                            <p class="card__description">Pack smart for your tropical adventure with our comprehensive guide to beach and island essentials.</p>
+                            <a href="blog-post.html" class="btn btn--primary">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="guides">
+                        <img src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cherry blossoms and traditional Japanese architecture" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Best Time to Visit Japan</h3>
+                            <div class="card__meta">
+                                <span>📅 Nov 28, 2024</span>
+                                <span>👤 Alex Kumar</span>
+                                <span>⏱️ 7 min read</span>
+                            </div>
+                            <p class="card__description">Discover the perfect season for your Japanese adventure based on your interests and preferences.</p>
+                            <a href="blog-post.html" class="btn btn--primary">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="gear">
+                        <img src="https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=800" alt="High-tech hiking boots on rocky mountain terrain" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Best Hiking Boots for 2024</h3>
+                            <div class="card__meta">
+                                <span>📅 Nov 25, 2024</span>
+                                <span>👤 James Wilson</span>
+                                <span>⏱️ 9 min read</span>
+                            </div>
+                            <p class="card__description">Comprehensive review of the top hiking boots for different terrains and adventure types.</p>
+                            <a href="blog-post.html" class="btn btn--primary">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="stories">
+                        <img src="https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Aurora borealis lighting up the Arctic sky" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Chasing the Northern Lights in Iceland</h3>
+                            <div class="card__meta">
+                                <span>📅 Nov 22, 2024</span>
+                                <span>👤 Sarah Mitchell</span>
+                                <span>⏱️ 8 min read</span>
+                            </div>
+                            <p class="card__description">An unforgettable journey through Iceland's dramatic landscapes in search of the elusive aurora borealis.</p>
+                            <a href="blog-post.html" class="btn btn--primary">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="culture">
+                        <img src="https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Indigenous community in Amazon rainforest setting" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Amazon Indigenous Communities</h3>
+                            <div class="card__meta">
+                                <span>📅 Nov 20, 2024</span>
+                                <span>👤 Maria Rodriguez</span>
+                                <span>⏱️ 11 min read</span>
+                            </div>
+                            <p class="card__description">Learn about the rich cultures and traditions of indigenous peoples living in the Amazon rainforest.</p>
+                            <a href="blog-post.html" class="btn btn--primary">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="tips">
+                        <img src="https://images.pexels.com/photos/3571551/pexels-photo-3571551.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sustainable travel items and eco-friendly gear" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Sustainable Travel Tips</h3>
+                            <div class="card__meta">
+                                <span>📅 Nov 18, 2024</span>
+                                <span>👤 Alex Kumar</span>
+                                <span>⏱️ 6 min read</span>
+                            </div>
+                            <p class="card__description">Travel responsibly and minimize your environmental impact with these practical sustainable travel tips.</p>
+                            <a href="blog-post.html" class="btn btn--primary">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="guides">
+                        <img src="https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Aerial view of Machu Picchu with tourists on ancient terraces" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Inca Trail vs Alternative Routes</h3>
+                            <div class="card__meta">
+                                <span>📅 Nov 15, 2024</span>
+                                <span>👤 David Chen</span>
+                                <span>⏱️ 10 min read</span>
+                            </div>
+                            <p class="card__description">Compare the classic Inca Trail with alternative routes to Machu Picchu to find your perfect adventure.</p>
+                            <a href="blog-post.html" class="btn btn--primary">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="gear">
+                        <img src="https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Travel photography equipment setup with city skyline" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Travel Photography Gear Guide</h3>
+                            <div class="card__meta">
+                                <span>📅 Nov 12, 2024</span>
+                                <span>👤 Emma Thompson</span>
+                                <span>⏱️ 8 min read</span>
+                            </div>
+                            <p class="card__description">Essential photography equipment for capturing your adventures, from beginner to professional setups.</p>
+                            <a href="blog-post.html" class="btn btn--primary">Read More</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 4rem;">
+                    <button class="btn btn--outline" disabled style="opacity: 0.5;">← Previous</button>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn btn--primary" style="width: 3rem;">1</button>
+                        <button class="btn btn--outline" style="width: 3rem;">2</button>
+                        <button class="btn btn--outline" style="width: 3rem;">3</button>
+                        <span style="padding: 0 1rem;">...</span>
+                        <button class="btn btn--outline" style="width: 3rem;">8</button>
+                    </div>
+                    <button class="btn btn--outline">Next →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="section section--gray">
+            <div class="container">
+                <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    <h2>Stay Updated with Our Latest Adventures</h2>
+                    <p style="font-size: var(--font-size-lg); margin-bottom: 2rem;">Subscribe to our newsletter for travel tips, destination guides, and exclusive offers.</p>
+                    
+                    <form style="display: flex; gap: 1rem; max-width: 400px; margin: 0 auto;" method="post" action="#">
+                        <input type="email" placeholder="Enter your email address" class="form__input" style="flex: 1;" required>
+                        <button type="submit" class="btn btn--primary">Subscribe</button>
+                    </form>
+                    
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin-top: 1rem;">
+                        No spam, unsubscribe at any time. Read our <a href="#" style="color: var(--color-primary);">Privacy Policy</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Adventure Tourism</h3>
+                    <p>Creating unforgettable adventures and connecting travelers with extraordinary destinations around the world.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Services</h3>
+                    <ul class="footer__links">
+                        <li><a href="services.html">Custom Itineraries</a></li>
+                        <li><a href="services.html">Expert Guides</a></li>
+                        <li><a href="services.html">Travel Insurance</a></li>
+                        <li><a href="services.html">Airport Transfers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Contact</h3>
+                     <p>📧 vardanrajput412@gmail.com </p>
+                    <p>📞 +91 8510066465</p>
+                    <p>📍Faridabad Haryana 121004 India</p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 Adventure Tourism. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

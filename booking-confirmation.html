@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Booking confirmation - Your adventure tour booking summary and payment details.">
+  <title>Booking Confirmation - Adventure Tourism</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .6s ease, transform .6s ease
+    }
+
+    .reveal--visible {
+      opacity: 1;
+      transform: none
+    }
+
+    .header.header--shadow {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+      background: rgba(255, 255, 255, .9);
+      backdrop-filter: saturate(180%) blur(8px)
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 50;
+      border: none;
+      border-radius: 9999px;
+      padding: .75rem 1rem;
+      font: inherit;
+      cursor: pointer;
+      display: none
+    }
+
+    .back-to-top--show {
+      display: inline-flex
+    }
+
+    .pill {
+      display: inline-block;
+      padding: .35rem .6rem;
+      border-radius: 999px;
+      font-size: .85rem
+    }
+
+    .pill--ok {
+      background: rgba(16, 185, 129, .12);
+      color: #047857
+    }
+
+    .pill--warn {
+      background: rgba(245, 158, 11, .12);
+      color: #92400e
+    }
+
+    .summary-grid {
+      display: grid;
+      gap: .5rem
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="header">
+    <nav class="container">
+      <div class="nav">
+        <a href="index.html" class="nav__logo">Adventure Tourism</a>
+        <ul class="nav__menu">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="destinations.html" class="nav__link">Destinations</a></li>
+          <li><a href="tours.html" class="nav__link">Tours</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+          <li><a href="blog.html" class="nav__link">Blog</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div style="max-width: 900px; margin: 0 auto;">
+
+          <!-- Success Header -->
+          <div class="reveal"
+            style="text-align:center; margin-bottom: 3rem; padding: 3rem; background: linear-gradient(135deg, var(--color-success) 0%, #16a34a 100%); color: white; border-radius: var(--border-radius-lg);">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
+            <h1 style="color: white; margin-bottom: .5rem;">Booking Confirmed!</h1>
+            <p style="font-size: var(--font-size-lg); opacity: .9;">Thank you for booking your adventure with us. Your
+              journey awaits!</p>
+            <div
+              style="margin-top: 1.25rem; display:flex; gap:.5rem; align-items:center; justify-content:center; flex-wrap:wrap;">
+              <div
+                style="padding: .6rem .8rem; border-radius: var(--border-radius); background: rgba(255,255,255,.22);">
+                <strong>Booking Reference: <span id="ref-code">#ADV-XXXX</span></strong>
+              </div>
+              <span id="payment-pill" class="pill pill--ok">Payment Successful</span>
+            </div>
+          </div>
+
+          <!-- Booking Summary -->
+          <div class="card reveal" style="margin-bottom: 2rem;">
+            <div class="card__content">
+              <h2 style="margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 2px solid var(--color-gray-200);">
+                Booking Summary</h2>
+
+              <div class="grid grid--2" style="gap: 2rem; margin-bottom: 1.5rem;">
+                <div>
+                  <h3 style="font-size: var(--font-size-lg); color: var(--color-primary); margin-bottom: 1rem;">Tour
+                    Details</h3>
+                  <div class="summary-grid">
+                    <div><strong>Tour:</strong> <span id="sum-tour">—</span></div>
+                    <div><strong>Duration:</strong> <span id="sum-duration">—</span></div>
+                    <div><strong>Departure:</strong> <span id="sum-departure">—</span></div>
+                    <div><strong>Return:</strong> <span id="sum-return">—</span></div>
+                    <div><strong>Travelers:</strong> <span id="sum-travelers">—</span></div>
+                    <div><strong>Difficulty:</strong> <span id="sum-difficulty">—</span></div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 style="font-size: var(--font-size-lg); color: var(--color-primary); margin-bottom: 1rem;">Traveler
+                    Information</h3>
+                  <div class="summary-grid">
+                    <div><strong>Primary Traveler:</strong> <span id="sum-name">—</span></div>
+                    <div><strong>Email:</strong> <span id="sum-email">—</span></div>
+                    <div><strong>Phone:</strong> <span id="sum-phone">—</span></div>
+                    <div><strong>Nationality:</strong> <span id="sum-nat">—</span></div>
+                    <div><strong>Room Type:</strong> <span id="sum-room">—</span></div>
+                    <div><strong>Accommodation:</strong> <span id="sum-accom">—</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Special Requests -->
+              <div style="margin-bottom: 1.5rem;">
+                <h3 style="font-size: var(--font-size-lg); color: var(--color-primary); margin-bottom: 1rem;">Special
+                  Requests</h3>
+                <div
+                  style="background-color: var(--color-gray-50); padding: 1rem; border-radius: var(--border-radius);">
+                  <p><strong>Dietary Requirements:</strong> <span id="sum-diet">—</span></p>
+                  <p><strong>Medical Notes:</strong> <span id="sum-med">—</span></p>
+                  <p><strong>Additional Services:</strong> <span id="sum-services">—</span></p>
+                </div>
+              </div>
+
+              <!-- Price Breakdown -->
+              <div
+                style="background-color: var(--color-gray-50); padding: 1.25rem; border-radius: var(--border-radius-lg);">
+                <h3 style="font-size: var(--font-size-lg); color: var(--color-primary); margin-bottom: 1rem;">Price
+                  Breakdown</h3>
+                <div class="summary-grid" id="price-rows"></div>
+                <hr style="margin: 1rem 0;">
+                <div
+                  style="display:flex; justify-content:space-between; font-weight:700; font-size: var(--font-size-lg); color: var(--color-primary);">
+                  <span>Total Amount</span><span id="sum-total">₹0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Information -->
+          <div class="card reveal" style="margin-bottom: 2rem;">
+            <div class="card__content">
+              <h2 style="margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 2px solid var(--color-gray-200);">
+                Payment Information</h2>
+
+              <div id="payment-banner"
+                style="background-color: var(--color-success); color: white; padding: 1.25rem; border-radius: var(--border-radius-lg); margin-bottom: 1.25rem;">
+                <div style="display:flex; align-items:center; gap: .75rem; margin-bottom:.5rem;">
+                  <span style="font-size: 1.4rem;">💳</span>
+                  <strong id="payment-status-text">Payment Successful</strong>
+                </div>
+                <div style="display:grid; gap:.35rem; font-size: var(--font-size-sm);">
+                  <div>Transaction ID: <span id="txn-id">TXN-XXXX</span></div>
+                  <div>Payment Method: <span id="pay-method">Card on file</span></div>
+                  <div>Amount Charged: <span id="amount-charged">₹0</span></div>
+                  <div>Date: <span id="pay-date">—</span></div>
+                </div>
+              </div>
+
+              <div
+                style="background-color: var(--color-gray-50); padding: 1.25rem; border-radius: var(--border-radius);">
+                <h4 style="margin-bottom: .75rem;">Payment Schedule</h4>
+                <div class="summary-grid">
+                  <div style="display:flex; justify-content: space-between;"><span>Deposit (paid today)</span><span
+                      style="color: var(--color-success); font-weight: 600;" id="deposit-amt">₹0</span></div>
+                  <div style="display:flex; justify-content: space-between;"><span>Final payment (due 45 days before
+                      departure)</span><span style="color: var(--color-warning); font-weight: 600;"
+                      id="final-amt">₹0</span></div>
+                </div>
+                <p style="margin-top: .75rem; font-size: var(--font-size-sm); color: var(--color-gray-600);"
+                  id="final-due-text">
+                  Final payment due: —
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Next Steps -->
+          <div class="card reveal" style="margin-bottom: 2rem;">
+            <div class="card__content">
+              <h2 style="margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 2px solid var(--color-gray-200);">
+                What Happens Next?</h2>
+              <div style="display: grid; gap: 1.5rem;">
+                <div style="display:flex; gap:1rem;">
+                  <div
+                    style="width:2rem;height:2rem;border-radius:50%;background-color:var(--color-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;flex-shrink:0;">
+                    1</div>
+                  <div>
+                    <h4>Confirmation Email (Within 24 hours)</h4>
+                    <p>You'll receive a detailed confirmation email with your booking details, packing list, and
+                      pre-departure information.</p>
+                  </div>
+                </div>
+                <div style="display:flex; gap:1rem;">
+                  <div
+                    style="width:2rem;height:2rem;border-radius:50%;background-color:var(--color-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;flex-shrink:0;">
+                    2</div>
+                  <div>
+                    <h4>Document Preparation (Within 1 week)</h4>
+                    <p>Our team will contact you to assist with visa requirements, travel insurance verification, and
+                      medical clearance forms.</p>
+                  </div>
+                </div>
+                <div style="display:flex; gap:1rem;">
+                  <div
+                    style="width:2rem;height:2rem;border-radius:50%;background-color:var(--color-secondary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;flex-shrink:0;">
+                    3</div>
+                  <div>
+                    <h4>Pre-Departure Briefing (30 days before)</h4>
+                    <p>Attend a virtual or in-person briefing session covering trip details, equipment checks, and meet
+                      your fellow travelers.</p>
+                  </div>
+                </div>
+                <div style="display:flex; gap:1rem;">
+                  <div
+                    style="width:2rem;height:2rem;border-radius:50%;background-color:var(--color-accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;flex-shrink:0;">
+                    4</div>
+                  <div>
+                    <h4>Final Preparations (7 days before)</h4>
+                    <p>Receive final itinerary updates, weather forecasts, and last-minute preparation instructions.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Information -->
+          <div class="reveal"
+            style="background-color: var(--color-warning); color: #92400e; padding: 1.5rem; border-radius: var(--border-radius-lg); margin-bottom: 2rem;">
+            <h3 style="color:#92400e; margin-bottom:.75rem;">⚠️ Important Reminders</h3>
+            <ul style="margin-left:1.5rem; display:grid; gap:.4rem;">
+              <li>Ensure your passport is valid for at least 6 months beyond your travel date.</li>
+              <li>Visa requirements vary — we'll provide detailed instructions if needed.</li>
+              <li>Travel insurance is recommended for all adventures.</li>
+              <li id="final-due-li">Final payment deadline will be shown above.</li>
+            </ul>
+          </div>
+
+          <!-- Contact + Actions -->
+          <div class="reveal" style="text-align:center; margin-bottom: 3rem;">
+            <h2 style="margin-bottom: 1rem;">Need Help or Have Questions?</h2>
+            <p style="font-size: var(--font-size-lg); margin-bottom: 1.25rem;">Our adventure specialists are here to
+              help you prepare for your journey.</p>
+            <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:1.5rem;">
+              <a href="contact.html" class="btn btn--primary">Contact Our Team</a>
+              <a href="faq.html" class="btn btn--outline">View FAQ</a>
+              <button id="print-btn" class="btn btn--secondary">Print Confirmation</button>
+            </div>
+            <div
+              style="background-color: var(--color-gray-50); padding: 1.25rem; border-radius: var(--border-radius-lg);">
+              <h4 style="margin-bottom:.5rem;">Emergency Contact</h4>
+              <p>📧 bookings@adventuretourism.com</p>
+              <p>📞 +1 (555) 123-4567 (24/7 support)</p>
+              <p>💬 Live chat available on our website</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3>Adventure Tourism</h3>
+          <p>Creating unforgettable adventures and connecting travelers with extraordinary destinations around the
+            world.</p>
+        </div>
+        <div class="footer__section">
+          <h3>Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h3>Services</h3>
+          <ul class="footer__links">
+            <li><a href="services.html">Custom Itineraries</a></li>
+            <li><a href="services.html">Expert Guides</a></li>
+            <li><a href="services.html">Travel Insurance</a></li>
+            <li><a href="services.html">Airport Transfers</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h3>Contact</h3>
+          <p>📧 vardanrajput412@gmail.com</p>
+          <p>📞 +91 8510066465</p>
+          <p>📍Faridabad Haryana 121004 India</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Adventure Tourism. All rights reserved. | Privacy Policy | Terms of Service</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ----- Utils -----
+    const fmtINR = n => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(isFinite(n) ? n : 0);
+    const fmtDate = iso => {
+      if (!iso) return '—';
+      const d = new Date(iso + 'T00:00:00');
+      if (isNaN(d)) return '—';
+      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    };
+    const addDays = (iso, days) => {
+      const d = new Date(iso + 'T00:00:00'); d.setDate(d.getDate() + days);
+      return d.toISOString().slice(0, 10);
+    };
+
+    // ----- Slug/Label & Pricing Maps -----
+    const SLUG_TO_LABEL = {
+      'himalayan-trek': 'Himalayan Trek Adventure',
+      'african-safari': 'African Safari Experience',
+      'island-hopping': 'Island Hopping Paradise',
+      'kathmandu-heritage': 'Kathmandu Cultural Heritage',
+      'patagonia-trek': 'Patagonia Wilderness Trek',
+      'japan-cultural': 'Japan Cultural Discovery',
+      'inca-trail': 'Inca Trail to Machu Picchu',
+      'northern-lights': 'Northern Lights Adventure',
+      'maldives-luxury': 'Maldives Luxury Escape',
+      'amazon-expedition': 'Amazon Rainforest Expedition',
+      'custom-tour': 'Custom Tour'
+    };
+
+    const LABEL_TO_BASE_INR = {
+      'Himalayan Trek Adventure': 2499,
+      'African Safari Experience': 3299,
+      'Island Hopping Paradise': 1899,
+      'Kathmandu Cultural Heritage': 899,
+      'Patagonia Wilderness Trek': 2199,
+      'Japan Cultural Discovery': 2799,
+      'Inca Trail to Machu Picchu': 2899,
+      'Northern Lights Adventure': 1699,
+      'Maldives Luxury Escape': 3999,
+      'Amazon Rainforest Expedition': 1999,
+      'Custom Tour': 0
+    };
+
+    const EXTRA_COSTS_INR = {
+      'airport-transfer': 50,
+      'travel-insurance': 125,
+      'pre-post-accommodation': 75
+      // 'equipment-rental' is variable -> ?equipmentEstimate
+    };
+
+    // ----- Tour Meta (duration/difficulty) -----
+    const TOUR_META = {
+      'Himalayan Trek Adventure': { duration: 14, difficulty: 'Challenging' },
+      'African Safari Experience': { duration: 10, difficulty: 'Easy-Moderate' },
+      'Island Hopping Paradise': { duration: 7, difficulty: 'Easy' },
+      'Kathmandu Cultural Heritage': { duration: 5, difficulty: 'Easy' },
+      'Patagonia Wilderness Trek': { duration: 8, difficulty: 'Moderate' },
+      'Japan Cultural Discovery': { duration: 9, difficulty: 'Easy' },
+      'Inca Trail to Machu Picchu': { duration: 12, difficulty: 'Challenging' },
+      'Northern Lights Adventure': { duration: 5, difficulty: 'Easy' },
+      'Maldives Luxury Escape': { duration: 6, difficulty: 'Easy' },
+      'Amazon Rainforest Expedition': { duration: 7, difficulty: 'Moderate' },
+      'Custom Tour': { duration: 7, difficulty: 'Varies' }
+    };
+
+    // ----- UI Shell Enhancements -----
+    const enhanceShell = () => {
+      const header = document.querySelector('.header');
+      const shadow = () => { if (window.scrollY > 8) header.classList.add('header--shadow'); else header.classList.remove('header--shadow'); };
+      shadow(); window.addEventListener('scroll', shadow, { passive: true });
+
+      const navToggle = document.querySelector('.nav__toggle');
+      const navMenu = document.querySelector('.nav__menu');
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => navMenu.classList.toggle('nav__menu--open'));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') navMenu.classList.remove('nav__menu--open'); });
+        document.addEventListener('click', e => {
+          if (!navMenu.classList.contains('nav__menu--open')) return;
+          const within = navMenu.contains(e.target) || navToggle.contains(e.target);
+          if (!within) navMenu.classList.remove('nav__menu--open');
+        });
+      }
+
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries, obs) => {
+          entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('reveal--visible'); obs.unobserve(en.target); } });
+        }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(el => io.observe(el));
+      } else { reveals.forEach(el => el.classList.add('reveal--visible')); }
+
+      const btn = document.createElement('button');
+      btn.className = 'back-to-top'; btn.textContent = '↑ Top'; btn.setAttribute('aria-label', 'Back to top');
+      document.body.appendChild(btn);
+      const toggle = () => { if (window.scrollY > 600) btn.classList.add('back-to-top--show'); else btn.classList.remove('back-to-top--show'); };
+      toggle(); window.addEventListener('scroll', toggle, { passive: true });
+      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      const printBtn = document.getElementById('print-btn');
+      if (printBtn) printBtn.addEventListener('click', () => window.print());
+    };
+
+    // ----- Populate from URL + Price Breakdown -----
+    const populateConfirmation = () => {
+      const sp = new URLSearchParams(location.search);
+
+      // Accept label or slug; normalize to label
+      const tourRaw = sp.get('tourLabel') || sp.get('tour') || 'himalayan-trek';
+      const tourLabel = TOUR_META[tourRaw] ? tourRaw : (SLUG_TO_LABEL[tourRaw] || tourRaw);
+
+      const travelers = parseInt(sp.get('travelers') || '2', 10) || 2;
+      const departureISO = sp.get('departureDate') || new Date().toISOString().slice(0, 10);
+      const selectedServices = (sp.get('selectedServices') || '').split(',').filter(Boolean);
+
+      // Optional variable estimate
+      const equipmentEstimate = parseInt((sp.get('equipmentEstimate') || '0').replace(/[^\d]/g, ''), 10) || 0;
+
+      // estimatedTotal may include commas/currency
+      const estTotalStr = sp.get('estimatedTotal') || '';
+      const estTotalNum = parseInt(estTotalStr.toString().replace(/[^\d]/g, ''), 10) || 0;
+
+      const firstName = sp.get('first-name') || 'John';
+      const lastName = sp.get('last-name') || 'Smith';
+      const email = sp.get('email') || 'john.smith@email.com';
+      const phone = sp.get('phone') || '+1 (555) 123-4567';
+      const nationality = sp.get('nationality') || 'United States';
+      const roomType = ((sp.get('room-type') || 'double').replace(/^./, c => c.toUpperCase())) + ' room';
+      const accommodation = (sp.get('accommodation') || 'standard').replace(/^./, c => c.toUpperCase());
+      const dietary = sp.get('dietary') || '—';
+      const medical = sp.get('medical') || '—';
+
+      // Meta
+      const meta = TOUR_META[tourLabel] || { duration: 7, difficulty: '—' };
+      const returnISO = addDays(departureISO, Math.max(0, meta.duration - 1));
+
+      // Summary fields
+      document.getElementById('sum-tour').textContent = tourLabel;
+      document.getElementById('sum-duration').textContent = `${meta.duration} days`;
+      document.getElementById('sum-departure').textContent = fmtDate(departureISO);
+      document.getElementById('sum-return').textContent = fmtDate(returnISO);
+      document.getElementById('sum-travelers').textContent = `${travelers} ${travelers > 1 ? 'people' : 'person'}`;
+      document.getElementById('sum-difficulty').textContent = meta.difficulty;
+
+      document.getElementById('sum-name').textContent = `${firstName} ${lastName}`.trim();
+      document.getElementById('sum-email').textContent = email;
+      document.getElementById('sum-phone').textContent = phone;
+      document.getElementById('sum-nat').textContent = nationality;
+      document.getElementById('sum-room').textContent = roomType;
+      document.getElementById('sum-accom').textContent = accommodation;
+      document.getElementById('sum-diet').textContent = dietary;
+      document.getElementById('sum-med').textContent = medical;
+
+      // Services pretty
+      const SERVICE_LABELS = {
+        'airport-transfer': 'Airport transfers',
+        'travel-insurance': 'Travel insurance',
+        'equipment-rental': 'Equipment rental',
+        'pre-post-accommodation': 'Pre/post-tour accommodation'
+      };
+      const servicesPretty = selectedServices.map(s => SERVICE_LABELS[s] || s).join(', ');
+      document.getElementById('sum-services').textContent = servicesPretty || 'None';
+
+      // ---- Price Breakdown (robust) ----
+      const priceRows = document.getElementById('price-rows');
+      priceRows.innerHTML = '';
+
+      const basePerPerson = LABEL_TO_BASE_INR[tourLabel] || 0;
+      const perTravelerExtras = selectedServices.reduce((sum, key) => {
+        if (key === 'equipment-rental') return sum;
+        return sum + (EXTRA_COSTS_INR[key] || 0);
+      }, 0);
+
+      const computedSubtotal = (basePerPerson + perTravelerExtras) * travelers;
+      const computedTotal = computedSubtotal + (equipmentEstimate || 0);
+      const grandTotal = estTotalNum > 0 ? estTotalNum : computedTotal;
+
+      // Base row
+      const baseRow = document.createElement('div');
+      baseRow.style.display = 'flex'; baseRow.style.justifyContent = 'space-between';
+      baseRow.innerHTML = `<span>${tourLabel} (${travelers} ${travelers > 1 ? 'travelers' : 'traveler'})</span><span>${fmtINR(basePerPerson * travelers)}</span>`;
+      priceRows.appendChild(baseRow);
+
+      // Extras row
+      if (perTravelerExtras > 0) {
+        const exRow = document.createElement('div');
+        exRow.style.display = 'flex'; exRow.style.justifyContent = 'space-between';
+        exRow.innerHTML = `<span>Extras per traveler × ${travelers}</span><span>${fmtINR(perTravelerExtras * travelers)}</span>`;
+        priceRows.appendChild(exRow);
+      }
+
+      // Equipment row
+      if (equipmentEstimate > 0) {
+        const eqRow = document.createElement('div');
+        eqRow.style.display = 'flex'; eqRow.style.justifyContent = 'space-between';
+        eqRow.innerHTML = `<span>Equipment estimate</span><span>${fmtINR(equipmentEstimate)}</span>`;
+        priceRows.appendChild(eqRow);
+      }
+
+      // (Optional) service fee example — enable if you actually charge this
+      // const fee = Math.round(Math.max(75, grandTotal * 0.015));
+      // const feeRow = document.createElement('div');
+      // feeRow.style.display='flex'; feeRow.style.justifyContent='space-between';
+      // feeRow.innerHTML = `<span>Service fee</span><span>${fmtINR(fee)}</span>`;
+      // priceRows.appendChild(feeRow);
+      // const totalWithFee = grandTotal + fee;
+
+      document.getElementById('sum-total').textContent = fmtINR(grandTotal);
+
+      // Booking ref + payment info
+      const ref = `#ADV-${new Date().getFullYear()}-${Math.random().toString(36).slice(2, 7).toUpperCase()}`;
+      document.getElementById('ref-code').textContent = ref;
+
+      const today = new Date();
+      document.getElementById('pay-date').textContent = today.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+
+      const deposit = Math.round(grandTotal * 0.3);
+      const final = Math.max(0, grandTotal - deposit);
+      document.getElementById('amount-charged').textContent = fmtINR(grandTotal);
+      document.getElementById('deposit-amt').textContent = fmtINR(deposit);
+      document.getElementById('final-amt').textContent = fmtINR(final);
+
+      // Final due date: 45 days before departure
+      let dueText = '—';
+      if (departureISO) {
+        const dep = new Date(departureISO + 'T00:00:00');
+        const due = new Date(dep); due.setDate(dep.getDate() - 45);
+        dueText = due.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+      }
+      document.getElementById('final-due-text').textContent = `Final payment due: ${dueText}. We'll send you a reminder email with payment instructions.`;
+      document.getElementById('final-due-li').textContent = `Final payment due by ${dueText}.`;
+
+      // Transaction/method + optional status
+      document.getElementById('txn-id').textContent =
+        `TXN-${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, '0')}${String(today.getDate()).padStart(2, '0')}-${Math.random().toString(36).slice(2, 10).toUpperCase()}`;
+      document.getElementById('pay-method').textContent = sp.get('payMethod') || 'Visa ending in 4532';
+
+      const status = (sp.get('status') || 'success').toLowerCase();
+      const pill = document.getElementById('payment-pill');
+      const banner = document.getElementById('payment-banner');
+      const ptext = document.getElementById('payment-status-text');
+      if (status !== 'success') {
+        pill.textContent = 'Payment Pending';
+        pill.className = 'pill pill--warn';
+        ptext.textContent = 'Payment Pending';
+        banner.style.backgroundColor = 'var(--color-warning)';
+        // If pending, show deposit as charged now (optional behavior)
+        document.getElementById('amount-charged').textContent = fmtINR(deposit);
+      }
+    };
+
+    // ----- Boot -----
+    window.addEventListener('DOMContentLoaded', () => {
+      enhanceShell();
+      populateConfirmation();
+      document.querySelectorAll('img:not([loading])').forEach(img => img.setAttribute('loading', 'lazy'));
+    });
+  </script>
+</body>
+
+</html>

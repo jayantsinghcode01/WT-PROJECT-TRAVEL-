@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our adventure tours - from mountain treks to wildlife safaris. Filter by type, duration, and difficulty to find your perfect adventure.">
+    <title>Tours - Adventure Tourism</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <nav class="container">
+            <div class="nav">
+                <a href="index.html" class="nav__logo">Adventure Tourism</a>
+                <ul class="nav__menu">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li><a href="destinations.html" class="nav__link">Destinations</a></li>
+                    <li><a href="tours.html" class="nav__link nav__link--active">Tours</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+                    <li><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+                <button class="nav__toggle" aria-label="Toggle navigation menu">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">Adventure Tours</h1>
+                <p class="hero__subtitle">Discover handcrafted adventures designed to create unforgettable memories and life-changing experiences</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div style="margin-bottom: 3rem;">
+                    <h2 style="margin-bottom: 1rem;">Filter Tours</h2>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="font-size: var(--font-size-base); margin-bottom: 1rem; color: var(--color-gray-700);">By Type</h3>
+                        <div class="filters">
+                            <button class="filter filter--active" data-filter="all">All Tours</button>
+                            <button class="filter" data-filter="trekking">Trekking</button>
+                            <button class="filter" data-filter="wildlife">Wildlife</button>
+                            <button class="filter" data-filter="cultural">Cultural</button>
+                            <button class="filter" data-filter="adventure">Adventure</button>
+                            <button class="filter" data-filter="beaches">Beaches</button>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="font-size: var(--font-size-base); margin-bottom: 1rem; color: var(--color-gray-700);">By Duration</h3>
+                        <div class="filters">
+                            <button class="filter" data-duration="short">1-5 days</button>
+                            <button class="filter" data-duration="medium">6-10 days</button>
+                            <button class="filter" data-duration="long">11+ days</button>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 style="font-size: var(--font-size-base); margin-bottom: 1rem; color: var(--color-gray-700);">By Difficulty</h3>
+                        <div class="filters">
+                            <button class="filter" data-difficulty="easy">Easy</button>
+                            <button class="filter" data-difficulty="moderate">Moderate</button>
+                            <button class="filter" data-difficulty="challenging">Challenging</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid--3">
+                    <article class="card" data-category="trekking adventure" data-duration="long" data-difficulty="challenging">
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Snow-capped Himalayan peaks with trekking trail" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Himalayan Trek Adventure</h3>
+                            <div class="card__meta">
+                                <span>⏱️ 14 days</span>
+                                <span>🏔️ Nepal</span>
+                                <span>🥾 Challenging</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                            <p class="card__description">Experience the majestic Himalayas with our guided trekking adventure through Nepal's most stunning mountain trails and authentic Sherpa villages.</p>
+                            <div class="card__price">From ₹2,499</div>
+                            <a href="tour-himalayan-trek.html" class="btn btn--primary">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="wildlife adventure" data-duration="medium" data-difficulty="easy">
+                        <img src="https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Safari vehicle observing elephants in African savanna" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">African Safari Experience</h3>
+                            <div class="card__meta">
+                                <span>⏱️ 10 days</span>
+                                <span>🦁 Kenya</span>
+                                <span>📷 Easy</span>
+                                <span>⭐ 4.8</span>
+                            </div>
+                            <p class="card__description">Witness the incredible wildlife of Africa on this unforgettable safari through Kenya's national parks during the Great Migration season.</p>
+                            <div class="card__price">From ₹3,299</div>
+                            <a href="booking.html" class="btn btn--primary">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="beaches adventure" data-duration="medium" data-difficulty="easy">
+                        <img src="https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Traditional longtail boats in crystal clear tropical lagoon" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Island Hopping Paradise</h3>
+                            <div class="card__meta">
+                                <span>⏱️ 7 days</span>
+                                <span>🏝️ Thailand</span>
+                                <span>🏊‍♀️ Easy</span>
+                                <span>⭐ 4.7</span>
+                            </div>
+                            <p class="card__description">Discover pristine beaches and crystal-clear waters while island hopping in Thailand's most beautiful archipelagos with snorkeling and beach activities.</p>
+                            <div class="card__price">From ₹1,899</div>
+                            <a href="booking.html" class="btn btn--primary">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="cultural adventure" data-duration="short" data-difficulty="easy">
+                        <img src="https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ancient temple complex with traditional architecture" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Kathmandu Cultural Heritage</h3>
+                            <div class="card__meta">
+                                <span>⏱️ 5 days</span>
+                                <span>🏛️ Nepal</span>
+                                <span>🚶‍♀️ Easy</span>
+                                <span>⭐ 4.8</span>
+                            </div>
+                            <p class="card__description">Explore UNESCO World Heritage Sites, ancient temples, and traditional Newari culture in Nepal's historic capital city.</p>
+                            <div class="card__price">From ₹899</div>
+                            <a href="destination-kathmandu.html" class="btn btn--primary">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="trekking adventure" data-duration="medium" data-difficulty="moderate">
+                        <img src="https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Dramatic granite peaks reflected in pristine mountain lake" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Patagonia Wilderness Trek</h3>
+                            <div class="card__meta">
+                                <span>⏱️ 8 days</span>
+                                <span>🏔️ Chile</span>
+                                <span>🥾 Moderate</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                            <p class="card__description">Journey through some of the world's most dramatic landscapes in Patagonia, with towering peaks, ancient glaciers, and pristine wilderness.</p>
+                            <div class="card__price">From ₹2,199</div>
+                            <a href="booking.html" class="btn btn--primary">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="cultural" data-duration="medium" data-difficulty="easy">
+                        <img src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Traditional Japanese temple with pagoda surrounded by cherry blossoms" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Japan Cultural Discovery</h3>
+                            <div class="card__meta">
+                                <span>⏱️ 9 days</span>
+                                <span>🇯🇵 Japan</span>
+                                <span>🚶‍♀️ Easy</span>
+                                <span>⭐ 4.7</span>
+                            </div>
+                            <p class="card__description">Experience traditional Japan with temple visits, tea ceremonies, ryokan stays, and cherry blossom viewing in Kyoto and Tokyo.</p>
+                            <div class="card__price">From ₹2,799</div>
+                            <a href="booking.html" class="btn btn--primary">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="adventure trekking" data-duration="long" data-difficulty="challenging">
+                        <img src="https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ancient Inca ruins of Machu Picchu shrouded in morning mist" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Inca Trail to Machu Picchu</h3>
+                            <div class="card__meta">
+                                <span>⏱️ 12 days</span>
+                                <span>🏛️ Peru</span>
+                                <span>🥾 Challenging</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                            <p class="card__description">Follow ancient Inca pathways to the lost city of Machu Picchu, one of the New Seven Wonders of the World, through stunning Andean landscapes.</p>
+                            <div class="card__price">From ₹2,899</div>
+                            <a href="booking.html" class="btn btn--primary">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="adventure" data-duration="short" data-difficulty="moderate">
+                        <img src="https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Northern lights aurora borealis over snowy landscape with person silhouette" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Northern Lights Adventure</h3>
+                            <div class="card__meta">
+                                <span>⏱️ 5 days</span>
+                                <span>❄️ Iceland</span>
+                                <span>🌌 Moderate</span>
+                                <span>⭐ 4.6</span>
+                            </div>
+                            <p class="card__description">Chase the magical aurora borealis in Iceland while exploring geysers, waterfalls, and the dramatic landscapes of the land of fire and ice.</p>
+                            <div class="card__price">From ₹1,699</div>
+                            <a href="booking.html" class="btn btn--primary">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="beaches" data-duration="medium" data-difficulty="easy">
+                        <img src="https://images.pexels.com/photos/3571551/pexels-photo-3571551.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Overwater bungalows in turquoise lagoon surrounded by coral atolls" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Maldives Luxury Escape</h3>
+                            <div class="card__meta">
+                                <span>⏱️ 6 days</span>
+                                <span>🏝️ Maldives</span>
+                                <span>🤿 Easy</span>
+                                <span>⭐ 4.8</span>
+                            </div>
+                            <p class="card__description">Indulge in luxury tropical paradise with overwater villas, pristine coral reefs, world-class diving, and stunning white sand beaches.</p>
+                            <div class="card__price">From ₹3,999</div>
+                            <a href="booking.html" class="btn btn--primary">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="wildlife" data-duration="medium" data-difficulty="easy">
+                        <img src="https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lush Amazon rainforest canopy with colorful tropical birds" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Amazon Rainforest Expedition</h3>
+                            <div class="card__meta">
+                                <span>⏱️ 7 days</span>
+                                <span>🌿 Peru</span>
+                                <span>🐒 Easy</span>
+                                <span>⭐ 4.7</span>
+                            </div>
+                            <p class="card__description">Explore the world's largest rainforest and discover incredible biodiversity with expert naturalist guides in the heart of the Amazon basin.</p>
+                            <div class="card__price">From ₹1,999</div>
+                            <a href="booking.html" class="btn btn--primary">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="trekking adventure" data-duration="medium" data-difficulty="moderate">
+                        <img src="https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Snow-capped Alpine peaks reflected in pristine mountain lake" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Swiss Alps Mountain Trek</h3>
+                            <div class="card__meta">
+                                <span>⏱️ 8 days</span>
+                                <span>🏔️ Switzerland</span>
+                                <span>⛷️ Moderate</span>
+                                <span>⭐ 4.8</span>
+                            </div>
+                            <p class="card__description">Experience the majesty of the Alps with pristine peaks, charming mountain villages, and world-class hiking trails through Switzerland's most scenic regions.</p>
+                            <div class="card__price">From ₹2,599</div>
+                            <a href="booking.html" class="btn btn--primary">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="beaches adventure" data-duration="short" data-difficulty="easy">
+                        <img src="https://images.pexels.com/photos/2587056/pexels-photo-2587056.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pristine Caribbean beach with palm trees and crystal blue water" class="card__image">
+                        <div class="card__content">
+                            <h3 class="card__title">Caribbean Island Adventure</h3>
+                            <div class="card__meta">
+                                <span>⏱️ 5 days</span>
+                                <span>🏝️ Barbados</span>
+                                <span>🏄‍♂️ Easy</span>
+                                <span>⭐ 4.6</span>
+                            </div>
+                            <p class="card__description">Caribbean paradise offering white sand beaches, vibrant coral reefs, water sports, and rich cultural heritage in a tropical setting.</p>
+                            <div class="card__price">From ₹1,599</div>
+                            <a href="booking.html" class="btn btn--primary">View Details</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;">
+                    <p style="font-size: var(--font-size-lg); margin-bottom: 2rem;">Can't find the perfect tour for you?</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="services.html" class="btn btn--primary">Create Custom Tour</a>
+                        <a href="contact.html" class="btn btn--outline">Contact Our Experts</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Adventure Tourism</h3>
+                    <p>Creating unforgettable adventures and connecting travelers with extraordinary destinations around the world.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Services</h3>
+                    <ul class="footer__links">
+                        <li><a href="services.html">Custom Itineraries</a></li>
+                        <li><a href="services.html">Expert Guides</a></li>
+                        <li><a href="services.html">Travel Insurance</a></li>
+                        <li><a href="services.html">Airport Transfers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Contact</h3>
+                    <p>📧 vardanrajput412@gmail.com </p>
+                    <p>📞 +91 8510066465</p>
+                    <p>📍Faridabad Haryana 121004 India</p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 Adventure Tourism. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
